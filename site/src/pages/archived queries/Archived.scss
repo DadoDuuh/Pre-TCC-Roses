@@ -1,0 +1,160 @@
+.page-archived {
+
+    background-color: #fff;
+    animation: fadein 0.5s;
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    h1,
+    h2 {
+        font-family: 'rose-regular';
+        font-size: 22px;
+        margin: 25px;
+    }
+
+    .logos{
+        width: 20em;
+    }
+    .page {
+        background-color: #fff;
+        animation: fadein 0.5s;
+
+    }
+
+    .mae {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu {
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-family: 'rose-regular';
+    }
+
+    .buttons {
+        background-color: #AEE239;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 50px;
+        padding: 15px 40px;
+        transition: transform .7s;
+
+    }
+
+    .buttons:hover {
+        transform: scale(1.1)
+    }
+
+    .info {
+        background-color: #F9F2E7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pesquisa {
+        width: 60em;
+        padding: 2em 0em 2em 0em;
+    }
+
+    .pesquisa-elements {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    .pesquisa-elements input {
+        height: 2em;
+        padding: 15px;
+        width: 100%;
+        border: none;
+        border-radius: 13px;
+        animation: none;
+        text-decoration: none;
+        outline: none;
+    }
+
+    .arquivadas {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60em;
+        border-radius: 20px;
+        margin-bottom: 2em;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #C5DBDE;
+
+    }
+
+    .icons>button {
+        background-color: #C5DBDE;
+        border: none;
+    }
+
+    button>img {
+        width: 2em;
+    }
+
+    a>img {
+        width: 2em;
+    }
+
+    .azulzin {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 40px;
+        background-color: #C5DBDE;
+        border-radius: 20px;
+        width: 50em;
+        height: 7em;
+        margin-bottom: 40px;
+        transition: transform .7s;
+    }
+
+    .azulzin > p{
+        font-family: 'rose-regular';
+    }
+
+    .azulzin:hover {
+        transform: scale(1.05)
+    }
+
+    .rodape {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .rodape > p{
+        width: 37em;
+        color: #2F5457;
+    }
+}

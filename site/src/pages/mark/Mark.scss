@@ -1,0 +1,83 @@
+.page-mark{
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    body{
+        background-color: #F9F2E7;
+        animation: fadein 0.5s;
+    }
+    .page{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    a{
+        background-color: #AEE239;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 35px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-family: 'rose-regular';
+        transition: transform .7s;
+        margin-bottom: 1.5em;
+    }
+    a:hover{
+        transform: scale(1.1)
+    }
+    
+    .info{
+        
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        height: 35em;
+    
+        font-family: 'rose-regular';
+    }
+    
+    .registro{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        width: 40em;
+    }
+    
+    .paciente{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        width: 35em;
+    }
+    
+    .paciente > input{
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        height: 3em;
+        width: 23em;
+        font-family: 'rose-regular';
+        margin:7px;
+        padding: 10px;
+        outline: none;
+    }
+    
+    .formulario-1, .formulario-2, .formulario-3{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 0.5em;
+    }
+    
+    label{
+        margin:15px;
+        color: #40C0CB;
+    }
+}

@@ -1,0 +1,207 @@
+
+.page-home{
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    .Shadows{
+        height: 1em;
+        box-shadow: 0px 10px 5px #d4d3d3 inset;
+        background-color: #F9F2E7;
+    }
+    .logos{
+        width: 18em;
+    }
+    .buttons{
+        background-color: #AEE239;
+        text-decoration: none;
+        color: #ffff;
+        border-radius: 30px;
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center ;
+    
+        padding: 1px 80px 1px 10px;
+    
+        background-color: white;
+        text-align: center;
+        box-shadow: 10px 10px 5px lightblue;
+    }
+    header > img{
+        width: 20em;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 40px 20px 0px 20px;
+    
+        background-color: #F9F2E7;
+        text-align: center;
+    }
+    .content-container1{
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        width: 74em;
+        height: 34em;
+    
+        display: flex;
+        justify-content: flex-end;
+    }
+    .container1-espacamento{
+        display:inline-block;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1em 1.5em 0em 0em;
+        color: #354F2C;
+        line-height: 3.3em;
+    }
+    .espacamento-text{
+        font-family: rose-regular;
+        font-size: 2em;
+        width: 12em; height: 14em
+    }
+    .content-container1 > *{
+        margin-bottom: 15em;
+        text-align:right;
+    }
+    .content-container2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        background-color: #40C0CB;
+    
+        border-radius: 20px;
+        width: 73em;
+        height: 17em;
+        margin-top: 2em;
+        padding: 16px;
+    }
+    .ct2-text{
+        font-size: 25px;
+        color: #ffff;
+    }
+    .content-container3{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .boxes{
+        width: 21em;
+        margin: 2em 1em 0px 1em;
+        padding: 16px 20px;
+        border-radius: 20px;
+    
+        background-color: #C5DBDE;
+    }
+    .boxes > p{
+        text-align: center;
+        font-size: 22px;
+    }
+    .boxes > h2{
+        font-family: rose-bold;
+        color: #40C0CB;
+        font-size: 30px;
+    }
+    .content-container4{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        width: 75em;
+        height: 37em;
+    }
+    .ct4-psicologo{
+        width: 20em;
+        border-radius: 15px;
+    }
+    .container4-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container4-text > h2{
+        font-family: rose-bold;
+        font-size: 2em;
+        color: #8FBE00;
+    }
+    .container4-text > p{
+        font-size: 23px;
+        width: 33em;
+        margin-left: 3em;
+        text-align: center;
+        margin-bottom: 2.9em;
+    }
+    .content-container5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2em;
+    }
+    .content-container5 > h3{
+        color: #2E939C;
+        font-family: rose-regular;
+        font-size: 22px;
+    }
+    .content-container5 > h2{
+        color: #40C0CB;
+        font-family: rose-bold;
+        font-size: 32px;
+    }
+    .container5-texts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 32px;
+        margin-left: 2em;
+    }
+    .container5-text1{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 1em 1em;
+    }
+    .container5-text1 > p{
+        font-size: 20px;
+        width: 25em;
+        margin-left: 1.5em;
+        margin-right: 3em;
+    }
+    .container5-text1 > div{
+        background-color: rgb(160, 154, 154);
+        width: 5px;
+        height: 7em;
+        border-radius: 20px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        width: 84em;
+        background-color: #ffff;
+    }
+    .footer-container2, .footer-container3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0em 6em 0em 1em;
+    }
+}
