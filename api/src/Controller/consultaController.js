@@ -1,9 +1,9 @@
-import { login } from '../Repository/usuarioRepository.js'
+import { marcarConsulta } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
 
-server.post('/usuario/login', async (req, resp) => {
+server.post('/usuario/marcar', async (req, resp) => {
     try{
         let { email, senha } = req.body;
         let resposta = await login(email, senha);
