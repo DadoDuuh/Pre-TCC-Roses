@@ -1,0 +1,92 @@
+(1) /POST  /usuario/login
+
+    request
+    {
+    "email": "",
+    "senha": ""
+    }
+
+    response
+    {
+        "id":0, (id do usuário)
+        "email": "",
+        "nome": "" (nome do usuário)
+    }
+
+//////////////////////////////////////////
+
+(2) /GET /paciente/:cpf
+
+    request
+    {
+        "cpf": ""
+    }
+    response
+    {
+        "id":0,
+        "nome": "",
+        "cpf": "",
+        "nascimento": "",  
+        "contato": ""
+    }
+
+///////////////////////////////////////////
+
+(3) /POST /usuario/marcar
+
+    request
+    {
+        "id":0,
+        "nome": "",
+        "cpf": "",
+        "nascimento": "",  
+        "contato": ""
+    }
+    response
+    {
+        "id":0,
+        "nome": "",
+        "cpf": "",
+        "nascimento": "",  
+        "contato": ""
+    }
+
+///////////////////////////////////////////////////////
+
+(4) /DELETE /usuario/remover/:id
+
+    response (204)
+
+///////////////////////////////////////////////////////
+
+(5) /POST /usuario/alterar/:id
+
+    request
+    {
+        "id_consulta":0,
+        "id_psicologo":0,
+        "id_paciente":0,
+        "vl_preco":"",
+        "dt_consulta":"2020-10-00"
+    }
+    response
+    {
+        "id_consulta":0,
+        "id_psicologo":0,
+        "id_paciente":0,
+        "vl_preco":"",
+        "dt_consulta":"2020-10-00"
+    }
+
+//////////////////////////////////////////////
+
+(6) /PUT /usuario/notes
+
+    request
+    {
+        "ds_anotacoes": ""
+    }
+    response
+    {
+        "ds_anotacoes": ""
+    }
