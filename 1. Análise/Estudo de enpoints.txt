@@ -81,15 +81,26 @@
 
 //////////////////////////////////////////////
 
-(6) /PUT /usuario/notes
+(6) /PUT /incluirAnotacoes/:consulta
 
     request
     {
-        "ds_anotacoes": ""
+        "anotacoes": ""
     }
-    response
-    {
-        "ds_anotacoes": ""
-    }
+    response(204)
 
-=-=-=-=-=-=-=--=--
+=-=-=-=-=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+(7) /GET /FiltrarPorCPF
+response
+{
+        "id":0,
+        "nome": "",
+        "cpf": "",
+        "nascimento": "",
+        "preco": "",
+        "data": "",
+        "hora": "",  
+        "contato": "",
+        "consulta":0
+}

@@ -52,3 +52,30 @@ export async function alterarConsulta (consulta, agendamento) {
     const [resposta] = await con.query(comando, [ agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.hora, agendamento.contato, consulta ])
     return resposta.affectedRows
 }
+export async function incluirAnotações (consulta, agendamento) {
+    const comando = `
+    UPDATE tb_consulta	
+	SET ds_anotacoes =  ? 
+	WHERE id_consulta = ?`
+
+    const [resposta] = await con.query (comando, [agendamento.anotacoes, consulta])
+    return resposta.affectedRows
+}
+export async function FiltrarPorCPF (cpf) {
+    const comando = `
+    SELECT id_consulta		consulta,
+    id_psicologo		    id,
+    nm_paciente 		    nome,
+    ds_cpf 			        cpf,
+    dt_nascimento	        nascimento,
+    vl_preco		        preco,
+    dt_consulta	            dataconsulta,
+    hr_consulta		        horario,
+    ds_contato 		        contato,
+    ds_anotacoes 	        anotacoes
+    FROM tb_consulta
+    WHERE ds_cpf		    like ?`
+
+    const [linhas] = await con.query(comando, [`%${cpf}%`])
+    return linhas
+}

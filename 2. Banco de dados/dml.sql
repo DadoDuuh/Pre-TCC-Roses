@@ -56,19 +56,24 @@ UPDATE tb_consulta
 
   
 -- CSU06:: incluir anotações
-INSERT INTO tb_consulta	(ds_anotacoes)
-	VALUES ('anotacoes');
+UPDATE tb_consulta	
+	SET ds_anotacoes = 'oi' 
+	WHERE id_consulta = 8;
 
 
 -- CSU07:: pesquisar consulta por cpf
-SELECT id_consulta		idconsulta,
-       id_psicologo		idpsicologo,
-       ds_cpf		    cpfpaciente,
+SELECT id_consulta		consulta,
+       id_psicologo		id,
+       nm_paciente 		nome,
+       ds_cpf 			cpf,
+       dt_nascimento	nascimento,
 	   vl_preco		    preco,
        dt_consulta	    dataconsulta,
+       hr_consulta		horario,
+       ds_contato 		contato,
        ds_anotacoes 	anotacoes
 	FROM tb_consulta
-	WHERE ds_cpf		like '123.456.789-10';
+	WHERE ds_cpf		like '544.598.158-42';
  
 
  
