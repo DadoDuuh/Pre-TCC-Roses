@@ -10,7 +10,7 @@ export default function Login() {
         <p>Página Inicial</p>
       </Link>
 
-      <img src="/images/unknown.png" className="logo-login" />
+      <img src="/images/unknown.png" className="logo-login" alt=""/>
 
       <div className="login-psicologo">
         <label for="email">

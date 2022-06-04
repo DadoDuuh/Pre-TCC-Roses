@@ -34,7 +34,7 @@ export default function Archived() {
           <div className="arquivadas">
             <h2>Consultas Arquivadas</h2>
 
-              <a className="azulzin">
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>CAMILA NOVAES DOS SANTOS</p>
                   <p>CPF: 544.798.758-52</p>
@@ -43,8 +43,8 @@ export default function Archived() {
                   <p>Data: 27/03/2022</p>
                   <p>Horário:10:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>JOÃO PEDRO DE MATOS CARVALHO</p>
                   <p>CPF: 581.211.547-22</p>
@@ -53,8 +53,8 @@ export default function Archived() {
                   <p>Data: 26/03/2022</p>
                   <p>Horário:15:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>LUÍS ALMEIDA CAMPOS</p>
                   <p>CPF: 354.298.228-36</p>
@@ -63,8 +63,8 @@ export default function Archived() {
                   <p>Data: 26/03/2022</p>
                   <p>Horário:13:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>VICTOR SANTOS PEREIRA</p>
                   <p>CPF:683.331.650-11</p>
@@ -73,8 +73,8 @@ export default function Archived() {
                   <p>Data: 26/03/2022</p>
                   <p>Horário: 10:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>JULIANO PISTORI</p>
                   <p>CPF:331.651.898-21</p>
@@ -83,8 +83,8 @@ export default function Archived() {
                   <p>Data: 25/03/2022</p>
                   <p>Horário:13:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>PEDRO SANTANA DE OLIVEIRA</p>
                   <p>CPF: 577.898.736-16</p>
@@ -93,8 +93,8 @@ export default function Archived() {
                   <p>Data: 25/03/2022</p>
                   <p>Horário: 08:00h</p>
                 </div>
-              </a>
-              <a className="azulzin">
+              </Link>
+              <Link className="azulzin" to="/anotacoes">
                 <div>
                   <p>ANDERSON SIQUEIRA LOPES</p>
                   <p>CPF:251.777.254-30</p>
@@ -103,7 +103,7 @@ export default function Archived() {
                   <p>Data: 24/03/2022</p>
                   <p>Horário: 15:00h</p>
                 </div>
-              </a>
+              </Link>
           </div>
         </div>
         <footer className="rodape">

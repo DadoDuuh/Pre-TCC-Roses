@@ -35,7 +35,7 @@ export default function Scheduled() {
           <div className="arquivadas">
             <h2>Consultas Marcadas</h2>
 
-            <Link to='/anotacoes'>
+           
               <div className="azulzin">
                 <div>
                   <p>JULIANA DE CASSIA JUNQUEIRA</p>
@@ -48,16 +48,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png" 
+                    alt=""/>
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+            
               <div className="azulzin">
                 <div>
                   <p>ANA BEATRIZ PEREIRA DOS REIS</p>
@@ -70,16 +72,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png" 
+                    alt=""/>
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+            
               <div className="azulzin">
                 <div>
                   <p>MARIA LUIZA SANTOS LIMA</p>
@@ -92,16 +96,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png" 
+                    alt=""/>
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+            
               <div className="azulzin">
                 <div>
                   <p>MARIA EDUARDA SAMPAIO SILVA</p>
@@ -114,16 +120,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png"
+                    alt="" />
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+            
               <div className="azulzin">
                 <div>
                   <p>VICTOR SANTOS PEREIRA</p>
@@ -136,16 +144,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png"
+                    alt="" />
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png"
+                    alt="" />
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+           
               <div className="azulzin">
                 <div>
                   <p>JULIANO PISTORI</p>
@@ -158,16 +168,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png"
+                    alt=""/>
                   </Link>
                 </div>
               </div>
-            </Link>
-            <Link to='/anotacoes'>
+            
+           
               <div className="azulzin">
                 <div>
                   <p>LETICIA ROCHA BARBOSA</p>
@@ -180,15 +192,18 @@ export default function Scheduled() {
                 <div className="icons">
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/edit.png" />
+                    <img src="/images/edit.png" 
+                    alt=""/>
                   </Link>
                   <Link to='/marcar'>
                     {" "}
-                    <img src="/images/trash.png" />
+                    <img src="/images/trash.png" 
+                    alt=""/>
+                    
                   </Link>
                 </div>
               </div>
-            </Link>
+            
           </div>
         </div>
         <footer className="rodape">

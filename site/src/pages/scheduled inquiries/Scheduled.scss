@@ -15,12 +15,12 @@
 
 
     p {
-        font-family: 'rose-regular';
+        font-family: 'Quicksand', sans-serif;
     }
 
     h1,
     h2 {
-        font-family: 'rose-regular';
+        font-family: 'Quicksand', sans-serif;
         font-size: 22px;
         margin: 25px;
     }
@@ -50,10 +50,11 @@
     Link {
         text-decoration: none;
         color: black;
-        font-family: 'rose-regular';
+        font-family: 'Quicksand', sans-serif;
     }
 
     .buttons {
+        font-family: 'Quicksand', sans-serif;
         background-color: #AEE239;
         text-decoration: none;
         color: #fff;
@@ -111,7 +112,11 @@
         flex-direction: column;
         justify-content: space-between;
         background-color: #C5DBDE;
+        
+        }
 
+    .icons img {
+        width: 2.5em;
     }
 
     .icons>button {
@@ -120,11 +125,11 @@
     }
 
     button>img {
-        width: 2em;
+        width: 1em;
     }
 
     Link > img {
-        width: 10px;
+        width: 5px;
     }
 
     .azulzin {

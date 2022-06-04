@@ -47,7 +47,7 @@
     flex-direction: column;
     align-items: center;
     
-    font-family: 'rose-regular';
+    font-family: 'Quicksand', sans-serif;
 }
 
 .text p {
@@ -59,7 +59,7 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 90%;
-    font-family: 'rose-regular';
+    font-family: 'Quicksand', sans-serif;
 }
 .button{
     width: 90%;
@@ -72,7 +72,7 @@
 textarea{
     border: 0.8em solid #C5DBDE;
     border-radius: 20px;
-    font-family: 'rose-regular';
+    font-family: 'Quicksand', sans-serif;
     font-size: 17px;
 }
 .rodape{
@@ -81,15 +81,19 @@ textarea{
     justify-content: space-around;
     align-items: center;
     padding: 15px 0px;
-    font-family: 'rose-regular';
+    font-family: 'Quicksand', sans-serif;
 }
-a{
+.a{
     background-color: #AEE239;
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 17px;
     padding: 10px 30px;
-    border-radius: 20px;
-    font-family: 'rose-regular';
+    border-radius: 2em;
+    font-family: 'Quicksand', sans-serif;
+    transition: transform .7s;
+}
+.a:hover {
+    transform: scale(1.1)
 }
 }

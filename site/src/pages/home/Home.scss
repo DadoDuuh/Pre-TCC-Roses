@@ -1,6 +1,30 @@
 
 .page-home{
+   
+    
+
+    width: 202.4vh;
+    background-color: #fff;
+    animation: fadein 0.7s;
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+    
+
+    font-family: 'Quicksand', sans-serif;
     main{
+
+        
+        font-family: 'Quicksand', sans-serif;
+      
+    
         display: flex;
         flex-direction: column;
     }
@@ -19,6 +43,10 @@
         border-radius: 30px;
         padding: 12px 25px;
         font-size: 18px;
+        transition: transform .7s;
+    }
+    .buttons:hover{
+        transform: scale(1.05)
     }
     header{
         display: flex;
@@ -65,7 +93,7 @@
         line-height: 3.3em;
     }
     .espacamento-text{
-        font-family: rose-regular;
+        font-family: 'Quicksand', sans-serif;
         font-size: 2em;
         width: 12em; height: 14em
     }
@@ -103,13 +131,18 @@
         border-radius: 20px;
     
         background-color: #C5DBDE;
+        transition: transform .7s;
+    }
+
+    .boxes:hover {
+        transform: scale(1.05)
     }
     .boxes > p{
         text-align: center;
         font-size: 22px;
     }
     .boxes > h2{
-        font-family: rose-bold;
+        font-family: 'Quicksand', sans-serif;
         color: #40C0CB;
         font-size: 30px;
     }
@@ -133,7 +166,7 @@
         align-items: center;
     }
     .container4-text > h2{
-        font-family: rose-bold;
+        font-family: 'Quicksand', sans-serif;
         font-size: 2em;
         color: #8FBE00;
     }
@@ -153,12 +186,12 @@
     }
     .content-container5 > h3{
         color: #2E939C;
-        font-family: rose-regular;
+        font-family: 'Quicksand', sans-serif;
         font-size: 22px;
     }
     .content-container5 > h2{
         color: #40C0CB;
-        font-family: rose-bold;
+        font-family: 'Quicksand', sans-serif;
         font-size: 32px;
     }
     .container5-texts{

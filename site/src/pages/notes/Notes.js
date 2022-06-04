@@ -6,12 +6,9 @@ export default function Notes() {
   return (
     <main className="page-notes">
       <header className="menu">
-        <img
-          style="width: 15em;"
-          src="../../assets/images/logo-hori.jpg"
-          alt=""
-        />
-        <a href="../archived Queries/index.html">Voltar</a>
+        <img src="../../../public/images/logo-hori.jpg"
+        alt="logo"/>
+        <Link className="a" to="/arquivadas">Voltar</Link>
       </header>
 
       <div className="info">
@@ -27,25 +24,25 @@ export default function Notes() {
         </div>
 
         <div className="anotacoes">
-          <h1 style="color: #2F5457; margin: 0px;">Anotações</h1>
+          <h1 style={{color: "#2F5457; margin: 0px;"}}>Anotações</h1>
 
           <textarea name="" id="" cols="30" rows="13"></textarea>
         </div>
 
         <div className="button">
-          <a style="width: 4em;" href="">
+          <Link className="a" to= "/arquivadas" >
             Concluir
-          </a>
+          </Link>
         </div>
       </div>
 
       <footer className="rodape">
         <img
-          style="width: 15em;"
-          src="../../assets/images/logo-hori.jpg"
-          alt=""
+          style={{width: "15em;"}}
+           src="../../../public/images/logo-hori.jpg"
+          alt="logo"
         />
-        <p style="width: 42em; text-align: center;">
+        <p style={{width: "42em; text-align: center;"}}>
           “Viva cada dia o seu mal e cada dia como se fosse o último, aproveite
           cada sorriso, cada momento pois eles passam e só nos resta
           lembranças.”

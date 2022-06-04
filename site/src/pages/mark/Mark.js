@@ -1,20 +1,19 @@
 import "./Mark.scss";
 import { Link } from "react-router-dom";
 
-export default function Mark() {
+function Mark() {
   return (
     <main className="page-mark">
       <div className="info">
-        <Link to="/marcadas">Voltar</Link>
-        <h1 style="color: #40C0CB; font-size: 2.3em; font-family: rose-bold;">
+        <Link className="a" to="/marcadas">Voltar</Link>
+        <h1 style={{color: " font-size: 2.3em; font-family: 'Quicksand', sans-serif;"}}>
           MARCAR CONSULTA
         </h1>
 
         <div className="registro">
-          <div className="paciente">
-            <label for="">Nome do paciente</label>
-            <input
-              style="width: 100%;"
+          <div className="nome-paciente">
+            <label  for="">Nome do paciente</label>
+            <input 
               type="text"
               placeholder="Ex: Urias Conceição da Silva"
             />
@@ -51,8 +50,10 @@ export default function Mark() {
           </div>
         </div>
 
-        <Link to="/marcadas">Marcar</Link>
+        <Link className="a" to="/marcadas">Marcar</Link>
       </div>
     </main>
   );
 }
+
+export default Mark;

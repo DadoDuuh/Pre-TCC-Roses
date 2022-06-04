@@ -5,7 +5,7 @@ function Home() {
   return (
     <main className="page-home">
       <header>
-        <img src="/images/logo-hori.jpg" />
+        <img src="/images/logo-hori.jpg" alt="" />
 
         <Link className="buttons" to="/login">
           Área administrativa
@@ -14,7 +14,7 @@ function Home() {
       <div className="Shadow"></div>
 
       <section className="content">
-        <div className="content-container1" style={{backgroundImage: "url(/woman-ct1.jpg)"}}>
+        <div className="content-container1" style={ {backgroundImage: 'url(/woman-ct1.jpg)'} }>
           <div className="container1-espacamento">
             <p className="espacamento-text">
               “Uma vida sem pensamento é possível, mas ela fracassa em fazer
