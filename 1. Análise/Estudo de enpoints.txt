@@ -15,19 +15,18 @@
 
 //////////////////////////////////////////
 
-(2) /GET /paciente/:cpf
-
-    request
-    {
-        "cpf": ""
-    }
+(2) /GET /consultar
     response
     {
         "id":0,
         "nome": "",
         "cpf": "",
-        "nascimento": "",  
-        "contato": ""
+        "nascimento": "",
+        "preco": "",
+        "data": "",
+        "hora": "",  
+        "contato": "",
+        "consulta":0
     }
 
 ///////////////////////////////////////////
@@ -39,45 +38,46 @@
         "id":0,
         "nome": "",
         "cpf": "",
+        "nascimento": "",
         "preco": "",
-        "nascimento": "",  
+        "data": "",
+        "hora": "",  
         "contato": ""
     }
     response
-    {
+    {   
         "id":0,
         "nome": "",
         "cpf": "",
-        "nascimento": "",  
-        "contato": ""
+        "nascimento": "",
+        "preco": "",
+        "data": "",
+        "hora": "",  
+        "contato": "",
+        "consulta":0
     }
 
 ///////////////////////////////////////////////////////
 
-(4) /DELETE /usuario/remover/:id
+(4) /DELETE /deletarConsulta/:consulta
 
     response (204)
 
 ///////////////////////////////////////////////////////
 
-(5) /POST /usuario/alterar/:id
+(5) /PUT /alterarConsulta/:consulta
 
     request
     {
-        "id_consulta":0,
-        "id_psicologo":0,
-        "id_paciente":0,
-        "vl_preco":"",
-        "dt_consulta":"2020-10-00"
+    "nome": "",
+    "cpf": "",
+    "nascimento": "",
+    "preco": 0,
+    "data": "",
+    "hora": "",
+    "contato": ""
     }
-    response
-    {
-        "id_consulta":0,
-        "id_psicologo":0,
-        "id_paciente":0,
-        "vl_preco":"",
-        "dt_consulta":"2020-10-00"
-    }
+    response (204)
 
 //////////////////////////////////////////////
 
@@ -91,3 +91,5 @@
     {
         "ds_anotacoes": ""
     }
+
+=-=-=-=-=-=-=--=--

@@ -6,7 +6,7 @@ INSERT INTO tb_psicologo (nm_psicologo, ds_email, ds_senha)
      
 -- CSU01:: efetuar login
 SELECT id_psicologo 		id,
-       nm_psicologo		    nome,
+       nm_psicologo			nome,
        ds_email			    email
   FROM tb_psicologo
  WHERE ds_email 		 = 'admin@admin.com.br'
@@ -16,16 +16,20 @@ SELECT id_psicologo 		id,
  -- CSU08:: consultar as proximas consultas       
 SELECT id_consulta		idconsulta,
        id_psicologo		idpsicologo,
-       id_paciente		idpaciente,
+       nm_paciente 		nome,
+       ds_cpf 			cpf,
+       dt_nascimento	nascimento,
 	   vl_preco		    preco,
        dt_consulta	    dataconsulta,
+       hr_consulta		horario,
+       ds_contato 		contato,
        ds_anotacoes 	anotacoes
   FROM tb_consulta;
   
 
 -- CSU03:: marcar consulta
-INSERT INTO tb_consulta (id_consulta, id_psicologo ,id_paciente, vl_preco, dt_consulta, ds_contato)
-     VALUES (1, 1, 1, 450.20, 2006-05-06, 'email@email.com');
+INSERT INTO tb_consulta (id_psicologo ,nm_paciente, ds_cpf, dt_nascimento, vl_preco, dt_consulta, hr_consulta, ds_contato)
+     VALUES (1, "Jennifer Oliveira de Sousa", "544.598.158-42", "2006-06-11", 150.50, "2022-06-20", "14:00:00", 'email@email.com');
 
 
 
@@ -38,20 +42,25 @@ DELETE FROM tb_consulta
 
 
 
+-- CSU05:: alterar consulta
+UPDATE tb_consulta		
+    SET nm_paciente 		= "sadsasa",
+    ds_cpf 			        = "123.456.789-12",
+    dt_nascimento	        = "2000-01-01",
+    vl_preco		        = 150.50,
+    dt_consulta	            = "2000-01-01",
+    hr_consulta		        = "14:00:00",
+    ds_contato 		        = "email@email.com"
+    WHERE id_consulta = 1;
 
--- CSU05:: consultar as consultas arquivadas      
-SELECT id_consulta		idconsulta,
-       id_psicologo		idpsicologo,
-       id_paciente		idpaciente,
-	   vl_preco		    preco,
-       dt_consulta	    dataconsulta,
-       ds_anotacoes 	anotacoes
-  FROM tb_consulta;
+
   
+-- CSU06:: incluir anotações
+INSERT INTO tb_consulta	(ds_anotacoes)
+	VALUES ('anotacoes');
 
 
-
--- CSU06:: pesquisar consulta por cpf
+-- CSU07:: pesquisar consulta por cpf
 SELECT id_consulta		idconsulta,
        id_psicologo		idpsicologo,
        ds_cpf		    cpfpaciente,
@@ -62,8 +71,16 @@ SELECT id_consulta		idconsulta,
 	WHERE ds_cpf		like '123.456.789-10';
  
 
-
-  
--- CSU07:: incluir anotações
-INSERT INTO tb_consulta	(ds_anotacoes)
-	VALUES ('anotacoes');
+ 
+-- CSU08:: consultar as consultas arquivadas      
+SELECT id_consulta		idconsulta,
+       id_psicologo		idpsicologo,
+       nm_paciente 		nome,
+       ds_cpf 			cpf,
+       dt_nascimento	nascimento,
+	   vl_preco		    preco,
+       dt_consulta	    dataconsulta,
+       hr_consulta		horario,
+       ds_contato 		contato,
+       ds_anotacoes 	anotacoes
+  FROM tb_consulta;
