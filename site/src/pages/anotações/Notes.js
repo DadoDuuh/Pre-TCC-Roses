@@ -6,8 +6,10 @@ export default function Notes() {
   return (
     <main className="page-notes">
       <header className="menu">
-        <img src="../../../public/images/logo-hori.jpg"
+        <Link to = "/">
+        <img className="logos"src="/images/logo-hori.jpg"
         alt="logo"/>
+        </Link>
         <Link className="a" to="/arquivadas">Voltar</Link>
       </header>
 
@@ -30,16 +32,16 @@ export default function Notes() {
         </div>
 
         <div className="button">
-          <Link className="a" to= "/arquivadas" >
+          <button className="a" to= "/arquivadas" >
             Concluir
-          </Link>
+          </button>
         </div>
       </div>
 
       <footer className="rodape">
         <img
-          style={{width: "15em;"}}
-           src="../../../public/images/logo-hori.jpg"
+            className="logos"
+           src="images/logo-hori.jpg"
           alt="logo"
         />
         <p style={{width: "42em; text-align: center;"}}>

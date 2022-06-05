@@ -130,12 +130,13 @@
         padding: 16px 20px;
         border-radius: 20px;
     
-        background-color: #C5DBDE;
+        background-color: #bae0e5;
         transition: transform .7s;
     }
 
     .boxes:hover {
-        transform: scale(1.05)
+        transform: scale(1.05);
+        background-color: #c3e7ec;
     }
     .boxes > p{
         text-align: center;

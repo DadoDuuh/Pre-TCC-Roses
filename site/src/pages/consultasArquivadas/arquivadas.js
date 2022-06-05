@@ -1,17 +1,43 @@
-import "./Archived.scss";
+import "./arquivadas.scss";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Storage from 'local-storage'
+import { useEffect } from "react";
+
 
 export default function Archived() {
+
+
+  const navigate = useNavigate();
+
+
+    useEffect(() => {
+      if (!Storage('usuario-logado')) {
+          navigate('/');  
+      } 
+     
+    }, [])
+
+    function  sairClick () {
+        Storage.remove('usuario-logado');
+        navigate('/login');
+    }
+  
   return (
+
+
     <main className="page-archived">
       <div className="mae">
         <header className="menu">
+          <Link to="/">
+           
           <img
             className="logos"
             src="/images/logo-hori.jpg"
             alt=""
           />
-
+          
+          </Link>
           <Link className="buttons" to="/marcadas">
             Marcadas
           </Link>
@@ -20,9 +46,10 @@ export default function Archived() {
             Marcar Consulta
           </Link>
 
-          <Link className="buttons" to="/">
-            Página Inicial
-          </Link>
+          <button  onClick={sairClick} className="buttons" to="/">
+          <img src="/images/logout.png" style={ {width: "1.2em"} }
+            /> &nbsp; Sair
+          </button>
         </header>
 
         <div className="info">

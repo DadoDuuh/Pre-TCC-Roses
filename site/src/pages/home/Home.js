@@ -170,9 +170,9 @@ function Home() {
                 (11) 5555-5555
                 <br />
                 <br />
-                @instagramdopsi <br />
+                @roses.dra_dri <br />
                 <br />
-                email@marcarconsulta.com
+                adripsicologa@marcarconsulta.com
               </p>
             </div>
 
