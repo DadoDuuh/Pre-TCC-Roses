@@ -1,6 +1,7 @@
 import "./marcar.scss";
 import { Link } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';   
+import 'react-toastify/dist/ReactToastify.css';
 import Storage from 'local-storage'
 import { useState } from "react";
 import { NovaConsulta } from "../../api/consultaApi";
@@ -9,25 +10,26 @@ function Mark() {
 
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
-  const [nascimento, setNascimento] = useState('');
-  const [preco, setPreco] = useState('');
-  const [data, setData] = useState('');
-  const [horario, setHorario] = useState('');
+  const [nascimento, setNascimento] = useState(0);
+  const [preco, setPreco] = useState(0);
+  const [data, setData] = useState(0);
+  const [horario, setHorario] = useState(0);
   const [contato, setContato] = useState('');
 
     async function marcarClick() {
         try {
-            const usuario = Storage('usuario-logado').id;
-           const r = await  NovaConsulta( nome, nascimento, cpf, horario, data, preco, contato, usuario);
+            const id = Storage('usuario-logado').id;
+           const r = await  NovaConsulta( nome, nascimento, cpf, horario, data, preco, contato, id);
 
-           alert('Nova consulta marcada com sucesso.');
+          toast('Nova consulta marcada com sucesso.');
         } catch (err) {
-          alert(err.message);
+          toast(err.response.data.erro);
         }
   }
 
   return (
     <main className="page-mark">
+      <ToastContainer />
       <div className="info">
         <Link className="a" to="/marcadas">Voltar</Link>
         <h1 style={{color: " font-size: 2.3em; font-family: 'Quicksand', sans-serif;"}}>
