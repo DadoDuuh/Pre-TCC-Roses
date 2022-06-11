@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Storage from 'local-storage'
 import { useState } from "react";
-import { NovaConsulta } from "../../api/consultaApi";
+import { NovaConsulta, alterarConsulta } from "../../api/consultaApi";
 
 function Mark() {
 
@@ -15,16 +15,41 @@ function Mark() {
   const [data, setData] = useState(0);
   const [horario, setHorario] = useState(0);
   const [contato, setContato] = useState('');
+  const [consulta, setConsulta] = useState(0);
 
     async function marcarClick() {
         try {
-            const id = Storage('usuario-logado').id;
-           const r = await  NovaConsulta( nome, nascimento, cpf, horario, data, preco, contato, id);
+            const usuario = Storage('usuario-logado').id;
+            
+           // let idConsulta = 0;
+            
+            if (consulta === 0 ) {
+              const r = await NovaConsulta( nome, nascimento, cpf, horario, data, preco, contato, usuario);
 
+              setConsulta(r.consulta);
+            }
+            else {
+              await  alterarConsulta( consulta, nome, nascimento, cpf, horario, data, preco, contato, usuario);
+
+            }
+
+            
+            
           toast('Nova consulta marcada com sucesso.');
         } catch (err) {
           toast(err.response.data.erro);
         }
+  }
+
+  function novoClick() {
+      setConsulta(0);
+      setNome('');
+      setNascimento(0);
+      setCpf('');
+      setHorario(0);
+      setData(0); 
+      setPreco(0);
+      setContato('');
   }
 
   return (
@@ -82,8 +107,10 @@ function Mark() {
             </div>
           </div>
         </div>
-
-        <button onClick={marcarClick}C className="a" to="/marcadas">Marcar</button>
+      <div className="botoes">
+        <button onClick={marcarClick} className="a" to="/marcadas">{consulta === 0 ? 'Marcar' : 'Alterar'} </button> &nbsp; &nbsp; 
+        <button onClick={novoClick} className="a">Novo</button>
+      </div>
       </div>
     </main>
   );

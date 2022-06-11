@@ -56,6 +56,7 @@ export default function Archived() {
           <div className="pesquisa">
             <div className="pesquisa-elements">
               <input type="text" placeholder="Pesquisar consulta (CPF)" />
+              <img className="lupa" src = '/images/icone-loupe-gris.png'/>
             </div>
           </div>
           <div className="arquivadas">

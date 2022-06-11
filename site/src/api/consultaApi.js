@@ -20,3 +20,35 @@ export async function NovaConsulta(nome, nascimento, cpf, horario, data, preco, 
 
     return resposta.data;
 }
+
+export async function alterarConsulta(consulta, nome, nascimento, cpf, horario, data, preco, contato, id) {
+    const resposta = await api.put(`/alterarConsulta/${consulta}`, {
+        
+        nome: nome,
+        cpf: cpf,
+        nascimento: nascimento,
+        preco: preco,
+        data: data,
+        hora: horario,  
+        contato: contato,
+        id: id
+        })
+
+    return resposta.data;
+}
+
+
+export async function ConsultarTodos() {
+    const resposta = await api.get('/consultar');
+    return resposta.data;
+}
+
+export async function FiltrarPorCPF(cpf) {
+    const resposta = await api.get(`/filtrarPorCPF?cpf=${cpf}`);
+    return resposta.data;
+}
+
+export async function removerConsulta(consulta) {
+    const resp = await api.delete(`/filme/${consulta}`);
+    return resp.status;
+}

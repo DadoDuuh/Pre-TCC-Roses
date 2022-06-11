@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import Scheduled from './pages/consultas marcadas/marcadas';
+import Scheduled from './pages/consultasmarcadas/marcadas';
 import Archived from './pages/consultasArquivadas/arquivadas';
 import Mark from './pages/marcarConsulta/marcar';
 import Notes from './pages/anotações/Notes';
