@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Storage from 'local-storage'
 import { useEffect, useState } from "react";
-import { NovaConsulta, alterarConsulta, buscarPorConsulta } from "../../api/consultaApi";
+import { NovaConsulta, alterarConsulta, buscarPorConsulta} from "../../api/consultaApi";
 import { useParams } from 'react-router-dom'
 
 function Mark() {
@@ -20,25 +20,24 @@ function Mark() {
 
   const { consultaParam } = useParams();
 
-
-    async function carregarConsulta() {
-      const resposta = await buscarPorConsulta(consultaParam);
-      setNome(resposta.nome);
-      setCpf(resposta.cpf);
-      setNascimento(resposta.nascimento);
-      setPreco(resposta.preco);
-      setData(resposta.data);
-      setHorario(resposta.horario);
-      setContato(resposta.contato)
-      setConsulta(resposta.consulta);
-    } 
-
-    useEffect(() => {
-      if(consultaParam) {
+  useEffect(() => {
+    if(consultaParam){
         carregarConsulta();
-      }
-    }, [])
-    
+    } 
+  }, [])
+
+  async function carregarConsulta( ) {
+    const resposta = await buscarPorConsulta(consultaParam);
+    setNome(resposta.nome);
+    setCpf(resposta.cpf);
+    setNascimento(resposta.nascimento.substr(0,10));
+    setPreco(resposta.preco);
+    setData(resposta.data.substr(0,10));
+    setHorario(resposta.horario);
+    setContato(resposta.contato);
+    setConsulta(resposta.consulta);
+  }
+
     async function marcarClick() {
         try {
             const usuario = Storage('usuario-logado').id;

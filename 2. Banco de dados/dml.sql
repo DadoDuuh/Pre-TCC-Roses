@@ -13,6 +13,22 @@ SELECT id_psicologo 		id,
    AND ds_senha			 = '1234';
    
 
+
+     select id_consulta 	consulta, 
+          id_psicologo		id,
+     nm_paciente	 		nome,
+          ds_cpf				cpf,
+          dt_nascimento	nascimento,
+          vl_preco		     preco,
+          dt_consulta	     dataconsulta,
+          hr_consulta		horario,
+          ds_contato 		contato,
+          ds_anotacoes 	anotacoes
+     from tb_consulta 
+     where id_consulta = 23;
+
+
+
  -- CSU08:: consultar as proximas consultas       
 SELECT id_consulta		idconsulta,
        id_psicologo		idpsicologo,

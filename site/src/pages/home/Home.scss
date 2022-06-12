@@ -1,9 +1,11 @@
 
 .page-home{
-   
     
-
-    width: 202.4vh;
+    
+    border: none;
+    margin: 0px;
+    width: auto;
+    height: auto;
     background-color: #fff;
     animation: fadein 0.7s;
 
@@ -28,11 +30,7 @@
         display: flex;
         flex-direction: column;
     }
-    .Shadows{
-        height: 1em;
-        box-shadow: 0px 10px 5px #d4d3d3 inset;
-        background-color: #F9F2E7;
-    }
+  
     .logos{
         width: 18em;
     }
@@ -58,7 +56,7 @@
     
         background-color: white;
         text-align: center;
-        box-shadow: 10px 10px 5px lightblue;
+        
     }
     header > img{
         width: 20em;
@@ -77,9 +75,10 @@
     .content-container1{
         background-size: 100%;
         background-repeat: no-repeat;
-        border-radius: 20px;
-        width: 74em;
-        height: 34em;
+        margin-top: -5.5vh;
+        margin-bottom:2em;
+        width: 203vh;
+        height:80vh;
     
         display: flex;
         justify-content: flex-end;
@@ -95,7 +94,9 @@
     .espacamento-text{
         font-family: 'Quicksand', sans-serif;
         font-size: 2em;
-        width: 12em; height: 14em
+        line-height: 1.8em;
+        width: 13em; height: 14em;
+        margin-right: 2em;
     }
     .content-container1 > *{
         margin-bottom: 15em;
@@ -118,6 +119,7 @@
     .ct2-text{
         font-size: 25px;
         color: #ffff;
+        line-height: 1.5em;
     }
     .content-container3{
         display: flex;
@@ -126,8 +128,8 @@
     }
     .boxes{
         width: 21em;
-        margin: 2em 1em 0px 1em;
-        padding: 16px 20px;
+        margin: 2.5em;
+        padding: 1.5em 1.3em 1.5em 1.3em;
         border-radius: 20px;
     
         background-color: #bae0e5;
@@ -139,6 +141,7 @@
         background-color: #c3e7ec;
     }
     .boxes > p{
+        line-height: 1.5em;
         text-align: center;
         font-size: 22px;
     }
@@ -146,6 +149,7 @@
         font-family: 'Quicksand', sans-serif;
         color: #40C0CB;
         font-size: 30px;
+        margin-bottom: 0.8em ;
     }
     .content-container4{
         display: flex;
@@ -158,18 +162,22 @@
     }
     .ct4-psicologo{
         width: 20em;
-        border-radius: 15px;
+        border-radius: 3em;
     }
+
+
     .container4-text{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
     .container4-text > h2{
         font-family: 'Quicksand', sans-serif;
         font-size: 2em;
         color: #8FBE00;
+        margin-bottom:0.7em ;
     }
     .container4-text > p{
         font-size: 23px;
@@ -177,23 +185,26 @@
         margin-left: 3em;
         text-align: center;
         margin-bottom: 2.9em;
+        line-height: 1.5em;
     }
     .content-container5{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2em;
+        margin-bottom: 4em;
     }
     .content-container5 > h3{
         color: #2E939C;
         font-family: 'Quicksand', sans-serif;
         font-size: 22px;
+        margin-bottom:0.7em ;
     }
     .content-container5 > h2{
         color: #40C0CB;
         font-family: 'Quicksand', sans-serif;
         font-size: 32px;
+        margin-bottom: 0.8em;
     }
     .container5-texts{
         display: flex;
@@ -227,10 +238,17 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 2px;
+        padding: 2em;
         width: 84em;
         background-color: #ffff;
     }
+
+    .footer p {
+        color:#2E939C;
+        font-weight: 600;
+        letter-spacing: 1.01px;
+    }
+
     .footer-container2, .footer-container3{
         display: flex;
         flex-direction: column;
@@ -238,4 +256,7 @@
         align-items: center;
         margin: 0em 6em 0em 1em;
     }
+
+    
+    
 }

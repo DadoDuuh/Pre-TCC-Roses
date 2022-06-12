@@ -9,12 +9,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import { FiltrarPorCPF, ConsultarTodos, removerConsulta} from '../../api/consultaApi'
 
+
 export default function Scheduled() {
 
 
     const [filtro, setFiltro] = useState('');
     const [consultas, setConsultas] = useState([]);
+   
 
+    function editarConsulta(consulta) {
+        navigate(`/alterar/${consulta}`);
+    }
 
     async function removerConsultaClick(consulta, nome) {
 
@@ -68,6 +73,15 @@ export default function Scheduled() {
         Storage.remove('usuario-logado');
         navigate('/login');
     }
+
+    document.addEventListener("keypress", function  (e) {
+      if(e.key === "Enter"){
+          const btn = document.querySelector("#send");
+          btn.click();
+      }
+  })
+
+
   return (
     <main className="page-scheduled">
       <ToastContainer />
@@ -99,14 +113,14 @@ export default function Scheduled() {
           <div className="pesquisa">
             <div className="pesquisa-elements">
               <input type="text" placeholder="Pesquisar consulta (CPF)"  value = {filtro} onChange={e => setFiltro(e.target.value)}/>
-              <img className="lupa" src = '/images/icone-loupe-gris.png' type="submit"  onClick={filtrar}/>
+              <img className="lupa" src = '/images/icone-loupe-gris.png' type="submit" id="send"  onClick={filtrar}/>
             </div>
           </div>
           <div className="arquivadas">
             <h2>Consultas Marcadas</h2>
 
             {consultas.map(item => 
-              <div className="azulzin">
+              <div className="azulzin" >
               <div>
                 <p>{item.nome}</p>
                 <p>CPF : {item.cpf}</p>
@@ -118,12 +132,12 @@ export default function Scheduled() {
               <div className="icons">
                 
                   
-                  <img src="/images/edit.png"
-                    alt="" />
+                  <img src="/images/edit.png" className="icones"
+                    alt="editar" onClick={() => editarConsulta(item.consulta)} />
                 
                 
                   
-                  <img src="/images/trash.png"
+                  <img src="/images/trash.png" className="icones"
                     alt="remover" onClick={() => removerConsultaClick(item.consulta, item.nome)} />
                 
               </div>

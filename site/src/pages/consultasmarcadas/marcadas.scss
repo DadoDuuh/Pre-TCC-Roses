@@ -16,6 +16,7 @@
 
     p {
         font-family: 'Quicksand', sans-serif;
+        font-weight: 500;
     }
 
     h1,
@@ -23,6 +24,7 @@
         font-family: 'Quicksand', sans-serif;
         font-size: 22px;
         margin: 25px;
+        
     }
 
     h3 {
@@ -39,6 +41,7 @@
         animation: fadein 0.5s;
 
     }
+    
 
     .mae {
         display: flex;
@@ -70,6 +73,7 @@
         transition: transform .7s;
         outline: none;
         border: none;
+        font-weight: 400;
     }
 
     .lupa {
@@ -78,6 +82,7 @@
         position: absolute;
         right:20em;
         margin-top: 0.4em;        
+        cursor: pointer;
     }
 
     
@@ -106,10 +111,10 @@
 
     .pesquisa-elements input {
         height: 2em;
-        padding: 15px;
+        padding: 2em;
         width: 100%;
         border: none;
-        border-radius: 15px;
+        border-radius: 5em;
         animation: none;
         text-decoration: none;
         outline: none;
@@ -132,6 +137,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        cursor: pointer;
         
         
         }
@@ -140,9 +146,12 @@
         width: 2.5em;
     }
 
-    .icons>button {
-        background-color: #C5DBDE;
-        border: none;
+    button {
+        cursor: pointer;
+    }
+
+    .icones {
+        cursor: pointer;
     }
 
     button>img {
@@ -177,9 +186,11 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        padding: 2em;
     }
     .rodape > p{
+        font-weight: 600;
         width: 37em;
-        color: #2F5457;
+        color: #2E939C;
     }
 }

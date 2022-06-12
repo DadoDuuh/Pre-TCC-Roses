@@ -1,4 +1,6 @@
 import "./Home.scss";
+import "../../index.scss"
+
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -11,7 +13,7 @@ function Home() {
           Área administrativa
         </Link>
       </header>
-      <div className="Shadow"></div>
+      <div></div>
 
       <section className="content">
         <div className="content-container1" style={ {backgroundImage: 'url(/woman-ct1.jpg)'} }>
@@ -19,8 +21,8 @@ function Home() {
             <p className="espacamento-text">
               “Uma vida sem pensamento é possível, mas ela fracassa em fazer
               desabrochar sua própria essência – ela não é apenas sem sentido,
-              ela não é totalmente viva” <br />
-              <br /> (Hannah Arendt)
+              ela não é totalmente viva” 
+               (Hannah Arendt)
             </p>
           </div>
         </div>

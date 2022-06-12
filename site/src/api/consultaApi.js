@@ -54,6 +54,6 @@ export async function removerConsulta(consulta) {
 }
 
 export async function buscarPorConsulta(consulta) {
-    const resposta = await api.get(`/alterar/${consulta}`);
+    const resposta = await api.get(`/consulta/${consulta}`);
     return resposta.data;
 }

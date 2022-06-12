@@ -1,4 +1,4 @@
-import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF } from '../Repository/consultaRepository.js'
+import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -151,4 +151,24 @@ server.get('/filtrarPorCPF', async (req, resp) => {
         });
     }
 })
+
+
+server.get('/consulta/:consulta', async (req, resp) => {
+    try {
+        const consulta = Number(req.params.consulta);
+
+        const resposta = await buscarPorConsulta(consulta);
+
+        if(!resposta)
+            resp.status(404).send( [] );
+        else 
+            resp.send(resposta);
+  
+        } catch (err) {
+        resp.status(400).send ({
+            erro :err.message
+        })
+    }
+})
+
 export default server;

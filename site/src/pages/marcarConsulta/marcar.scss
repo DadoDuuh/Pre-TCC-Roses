@@ -1,10 +1,13 @@
 .page-mark{
+  
+    
+    
     @keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
     }
         width: auto;
-        height: auto;
+        height: 100vh;
         background-color: #F9F2E7;
         animation: fadein 0.5s;
     
@@ -77,9 +80,10 @@
         border-radius: 8px;
         font-size: 15px;
         height: 2em;
-        width: 50em; 
+        width: 49.5em;
+        margin-left: 0.6em; 
         font-family: 'Quicksand', sans-serif;
-        padding: 10px;
+        padding: 1.8em;
         outline: none;
 
     }
@@ -92,7 +96,7 @@
         width: 24em;
         font-family: 'Quicksand', sans-serif;
         margin:7px;
-        padding: 10px;
+        padding: 1.8em;
         outline: none;
     }
 

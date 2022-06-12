@@ -99,10 +99,10 @@
 
     .pesquisa-elements input {
         height: 2em;
-        padding: 15px;
+        padding: 2em;
         width: 100%;
         border: none;
-        border-radius: 13px;
+        border-radius: 5em;
         animation: none;
         text-decoration: none;
         outline: none;
@@ -168,9 +168,12 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        padding: 2em;
     }
     .rodape > p{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
         width: 37em;
-        color: #2F5457;
+        color: #2E939C;
     }
 }
