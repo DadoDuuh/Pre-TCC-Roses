@@ -1,4 +1,4 @@
-import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta } from '../Repository/consultaRepository.js'
+import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, IncluirAnotacoes } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -167,6 +167,37 @@ server.get('/consulta/:consulta', async (req, resp) => {
         } catch (err) {
         resp.status(400).send ({
             erro :err.message
+        })
+    }
+})
+
+server.get('/filtrarArquivadasPorCPF', async (req, resp) => {
+    try {
+        const { cpf } = req.query;
+        const resposta = await FiltrarArquivadasPorCPF (cpf)
+        if(!resposta){
+            resp.sendStatus(404)
+        }
+        else{
+            resp.send(resposta)
+        }
+    } catch (err) {
+        resp.status(404).send({
+            erro:err.message
+        });
+    }
+})
+
+server.put('/incluirAnotacoes', async (req, resp) => {
+    try{
+        const consulta = req.body;
+        const resposta = await IncluirAnotacoes(consulta);
+        if(!resposta){
+            resp.sendStatus(404);
+        }
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.message
         })
     }
 })
