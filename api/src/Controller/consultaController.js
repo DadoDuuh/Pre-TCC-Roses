@@ -1,4 +1,4 @@
-import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, IncluirAnotacoes } from '../Repository/consultaRepository.js'
+import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, ConsultarArquivadas } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -53,6 +53,19 @@ server.get('/consultar', async (req, resp) => {
         });
     }
 })
+//server.get('/consultar', async (req, resp) => {
+//  try{
+//        const resposta = await ConsultarMarcadas();
+//        resp.send(resposta)
+//    } catch(err) {
+//        resp.status(401).send({
+//            erro: err.message
+//        })
+//    }    
+//})
+
+
+
 
 //deletar consulta
 server.delete('/deletarConsulta/:consulta', async (req, resp) => {
@@ -188,18 +201,15 @@ server.get('/filtrarArquivadasPorCPF', async (req, resp) => {
     }
 })
 
-server.put('/incluirAnotacoes', async (req, resp) => {
-    try{
-        const consulta = req.body;
-        const resposta = await IncluirAnotacoes(consulta);
-        if(!resposta){
-            resp.sendStatus(404);
-        }
+server.get('/consultarArquivadas', async (req, resp) => {
+  try{
+        const resposta = await ConsultarArquivadas();
+        resp.send(resposta)
     } catch(err) {
-        resp.status(400).send({
+        resp.status(401).send({
             erro: err.message
         })
-    }
+    }    
 })
 
 export default server;

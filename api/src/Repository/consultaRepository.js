@@ -28,6 +28,26 @@ export async function ConsultarTodos() {
     return linhas;
 }
 
+//export async function ConsultarMarcadas() {
+//    const comando = `
+//    SELECT id_consulta		consulta,
+//       id_psicologo		    id,
+//       nm_paciente 		    nome,
+//       ds_cpf 			    cpf,
+//       dt_nascimento	    nascimento,
+//	   vl_preco		        preco,
+//       dt_consulta	        data,
+//       hr_consulta		    horario,
+//       ds_contato 		    contato,
+//       ds_anotacoes 	    anotacoes
+//       FROM tb_consulta
+//       WHERE dt_consulta > CURDATE();`
+//
+//    const [linhas] = await con.query(comando)
+//    return linhas;
+//}
+
+
 export async function DeletarConsulta(consulta) {
     const comando = `
     DELETE FROM tb_consulta 
@@ -119,12 +139,21 @@ export async function FiltrarArquivadasPorCPF(cpf) {
     return linhas
 }
 
-export async function IncluirAnotacoes(anotacao) {
+export async function ConsultarArquivadas() {
     const comando = `
-    UPDATE tb_consulta	
-	SET ds_anotacoes = ? 
-	WHERE id_consulta = ?;`
+    SELECT id_consulta		consulta,
+    id_psicologo		    id,
+    nm_paciente 		    nome,
+    ds_cpf 			        cpf,
+    dt_nascimento	        nascimento,
+    vl_preco		        preco,
+    dt_consulta	            data,
+    hr_consulta		        horario,
+    ds_contato 		        contato,
+    ds_anotacoes 	        anotacoes
+    FROM tb_consulta
+    WHERE dt_consulta < CURDATE();`
 
-    const [linhas] = await con.query(comando, [anotacao.notes, anotacao.id]);
-    return linhas.affectedRows;
+    const [linhas] = await con.query(comando)
+    return linhas
 }

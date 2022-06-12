@@ -42,7 +42,17 @@ export async function ConsultarTodos() {
     const resposta = await api.get('/consultar');
     return resposta.data;
 }
+ ////////////////////Adicionadas depois////////////////////////////////
+export async function ConsultarArquivadas() {
+    const resposta = await api.get('/consultarArquivadas');
+    return resposta.data;
+}
 
+export async function FiltrarArquivadasPorCPF(cpf) {
+    const resposta = await api.get(`/filtrarArquivadasPorCPF?cpf=${cpf}`);
+    return resposta.data;
+}
+//////////////////////////////////////////////////////////////////////
 export async function FiltrarPorCPF(cpf) {
     const resposta = await api.get(`/filtrarPorCPF?cpf=${cpf}`);
     return resposta.data;

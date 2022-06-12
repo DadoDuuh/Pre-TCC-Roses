@@ -2,11 +2,17 @@ import "./arquivadas.scss";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Storage from 'local-storage'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
+import { ConsultarArquivadas, FiltrarArquivadasPorCPF } from "../../api/consultaApi";
 
 
 export default function Archived() {
-
+  const [consultas, setConsultas] = useState([]);
+  const [filtro, setFiltro] = useState('');
 
   const navigate = useNavigate();
 
@@ -22,6 +28,20 @@ export default function Archived() {
         Storage.remove('usuario-logado');
         navigate('/login');
     }
+
+    async function filtrar() {
+      const resp = await FiltrarArquivadasPorCPF(filtro)
+      setConsultas(resp);
+    }
+
+    async function ConsultarTodasArquivadas() {
+      const resp = await ConsultarArquivadas();
+      setConsultas(resp);
+    }
+
+    useEffect(() => {
+      ConsultarTodasArquivadas();
+    }, [])
   
   return (
 
@@ -55,83 +75,26 @@ export default function Archived() {
         <div className="info">
           <div className="pesquisa">
             <div className="pesquisa-elements">
-              <input type="text" placeholder="Pesquisar consulta (CPF)" />
-              <img className="lupa" src = '/images/icone-loupe-gris.png'/>
+              <input type="text" placeholder="Pesquisar consulta (CPF)"  value={filtro} onChange={e => setFiltro(e.target.value)}/>
+              <img className="lupa" src = '/images/icone-loupe-gris.png' onClick={filtrar}/>
             </div>
           </div>
           <div className="arquivadas">
             <h2>Consultas Arquivadas</h2>
 
-              <Link className="azulzin" to="/anotacoes">
+              {consultas.map(item => 
+                <Link className="azulzin" to="/anotacoes">
                 <div>
-                  <p>CAMILA NOVAES DOS SANTOS</p>
-                  <p>CPF: 544.798.758-52</p>
+                  <p>{item.nome}</p>
+                  <p>{item.cpf}</p>
                 </div>
                 <div>
-                  <p>Data: 27/03/2022</p>
-                  <p>Horário:10:00h</p>
+                  <p>Data: {item.data.substr(0, 10)}</p>
+                  <p>Horário: {item.horario.substr(0, 5)}</p>
                 </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>JOÃO PEDRO DE MATOS CARVALHO</p>
-                  <p>CPF: 581.211.547-22</p>
-                </div>
-                <div>
-                  <p>Data: 26/03/2022</p>
-                  <p>Horário:15:00h</p>
-                </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>LUÍS ALMEIDA CAMPOS</p>
-                  <p>CPF: 354.298.228-36</p>
-                </div>
-                <div>
-                  <p>Data: 26/03/2022</p>
-                  <p>Horário:13:00h</p>
-                </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>VICTOR SANTOS PEREIRA</p>
-                  <p>CPF:683.331.650-11</p>
-                </div>
-                <div>
-                  <p>Data: 26/03/2022</p>
-                  <p>Horário: 10:00h</p>
-                </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>JULIANO PISTORI</p>
-                  <p>CPF:331.651.898-21</p>
-                </div>
-                <div>
-                  <p>Data: 25/03/2022</p>
-                  <p>Horário:13:00h</p>
-                </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>PEDRO SANTANA DE OLIVEIRA</p>
-                  <p>CPF: 577.898.736-16</p>
-                </div>
-                <div>
-                  <p>Data: 25/03/2022</p>
-                  <p>Horário: 08:00h</p>
-                </div>
-              </Link>
-              <Link className="azulzin" to="/anotacoes">
-                <div>
-                  <p>ANDERSON SIQUEIRA LOPES</p>
-                  <p>CPF:251.777.254-30</p>
-                </div>
-                <div>
-                  <p>Data: 24/03/2022</p>
-                  <p>Horário: 15:00h</p>
-                </div>
-              </Link>
+                </Link>
+              )}
+
           </div>
         </div>
         <footer className="rodape">
