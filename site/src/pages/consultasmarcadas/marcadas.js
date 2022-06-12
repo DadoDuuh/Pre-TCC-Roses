@@ -2,13 +2,44 @@ import "./marcadas.scss";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Storage from 'local-storage'
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import { FiltrarPorCPF, ConsultarTodos, removerConsulta} from '../../api/consultaApi'
 
 export default function Scheduled() {
 
+
     const [filtro, setFiltro] = useState('');
     const [consultas, setConsultas] = useState([]);
+
+
+    async function removerConsultaClick(consulta, nome) {
+
+      confirmAlert({
+          title:'Remover agendamento',
+          message:`Deseja remover o agendamento de ${nome} ?`,
+          buttons:[
+              {
+                  label:'Sim',
+                  onClick: async () => {
+              const resposta = await removerConsulta(consulta, nome);
+                  if(filtro  === '')
+                            carregarTodasConsultas();
+                  else
+                          filtrar();
+                                  toast.success('Agendamento removido com sucesso')
+                  }
+                  
+              },
+              {
+                  label:'Não'
+              }
+          ]
+      })
+  }
 
     async function filtrar() {
       const resp = await FiltrarPorCPF(filtro);
@@ -20,17 +51,13 @@ export default function Scheduled() {
       setConsultas(resp);
     }
 
+  
+    const navigate = useNavigate();
+    
+    
+
     useEffect(() => {
       carregarTodasConsultas();
-    }, [])
-
-
-     
-
-  const navigate = useNavigate();
-
-
-    useEffect(() => {
       if (!Storage('usuario-logado')) {
           navigate('/');  
       }
@@ -43,7 +70,7 @@ export default function Scheduled() {
     }
   return (
     <main className="page-scheduled">
-
+      <ToastContainer />
       <section className="mae">
         <header className="menu">
           <Link to="/">
@@ -85,7 +112,7 @@ export default function Scheduled() {
                 <p>CPF : {item.cpf}</p>
               </div>
               <div>
-                <p>Data: {item.data}</p>
+                <p>Data: {item.data.substr(0,10)}</p>
                 <p>Horário : {item.horario}</p>
               </div>
               <div className="icons">
@@ -97,7 +124,7 @@ export default function Scheduled() {
                 
                   
                   <img src="/images/trash.png"
-                    alt="" onClick={() => removerConsulta(item.nome)} />
+                    alt="remover" onClick={() => removerConsultaClick(item.consulta, item.nome)} />
                 
               </div>
             </div>

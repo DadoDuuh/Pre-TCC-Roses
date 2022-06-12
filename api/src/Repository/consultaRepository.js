@@ -69,7 +69,7 @@ export async function FiltrarPorCPF (cpf) {
     ds_cpf 			        cpf,
     dt_nascimento	        nascimento,
     vl_preco		        preco,
-    dt_consulta	            dataconsulta,
+    dt_consulta	            data,
     hr_consulta		        horario,
     ds_contato 		        contato,
     ds_anotacoes 	        anotacoes

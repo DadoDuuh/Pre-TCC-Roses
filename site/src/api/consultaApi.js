@@ -49,6 +49,11 @@ export async function FiltrarPorCPF(cpf) {
 }
 
 export async function removerConsulta(consulta) {
-    const resp = await api.delete(`/filme/${consulta}`);
+    const resp = await api.delete(`/deletarConsulta/${consulta}`);
     return resp.status;
+}
+
+export async function buscarPorConsulta(consulta) {
+    const resposta = await api.get(`/alterar/${consulta}`);
+    return resposta.data;
 }

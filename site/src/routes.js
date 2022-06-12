@@ -16,7 +16,10 @@ export default function Index() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/arquivadas' element={<Archived />} />
                 <Route path='/marcadas' element={<Scheduled />} />
+
                 <Route path='/marcar' element={<Mark />} />
+                <Route path='/alterar/:consultaParam' element={<Mark />} />
+
                 <Route path='/anotacoes' element={<Notes />} />
             </Routes>
         </BrowserRouter>
