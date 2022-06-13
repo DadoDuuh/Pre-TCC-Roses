@@ -45,7 +45,7 @@ function Home() {
         <div className="content-container3">
           <div className="boxes">
             <h2>
-              O que é<br />
+              O que é
               Psicoterapia?
             </h2>
             <p>
@@ -58,7 +58,7 @@ function Home() {
 
           <div className="boxes">
             <h2>
-              Para que serve a<br />
+              Para que serve a
               Psicoterapia?
             </h2>
             <p>
@@ -72,7 +72,6 @@ function Home() {
           <div className="boxes">
             <h2>
               Quando ir
-              <br />
               ao psicólogo?
             </h2>
             <p>
