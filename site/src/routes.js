@@ -20,7 +20,8 @@ export default function Index() {
                 <Route path='/marcar' element={<Mark />} />
                 <Route path='/alterar/:consultaParam' element={<Mark />} />
 
-                <Route path='/anotacoes' element={<Notes />} />
+                
+                <Route path='/anotacoes/:consultaParam' element={<Notes />} />
             </Routes>
         </BrowserRouter>
     )

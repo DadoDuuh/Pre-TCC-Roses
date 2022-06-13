@@ -38,8 +38,8 @@ export async function alterarConsulta(consulta, nome, nascimento, cpf, horario, 
 }
 
 
-export async function ConsultarTodos() {
-    const resposta = await api.get('/consultar');
+export async function ConsultarMarcadas() {
+    const resposta = await api.get('/consultarMarcadas');
     return resposta.data;
 }
  ////////////////////Adicionadas depois////////////////////////////////
@@ -65,5 +65,12 @@ export async function removerConsulta(consulta) {
 
 export async function buscarPorConsulta(consulta) {
     const resposta = await api.get(`/consulta/${consulta}`);
+    return resposta.data;
+}
+
+export async function incluirAnotacoes(consulta, anotacoes) {
+    const resposta = await api.put(`/incluirAnotacoes/${consulta}`, {
+        anotacoes : anotacoes
+    })
     return resposta.data;
 }

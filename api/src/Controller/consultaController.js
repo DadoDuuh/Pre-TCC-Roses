@@ -1,4 +1,4 @@
-import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, ConsultarArquivadas } from '../Repository/consultaRepository.js'
+import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, ConsultarArquivadas, ConsultarMarcadas } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -53,16 +53,17 @@ server.get('/consultar', async (req, resp) => {
         });
     }
 })
-//server.get('/consultar', async (req, resp) => {
-//  try{
-//        const resposta = await ConsultarMarcadas();
-//        resp.send(resposta)
-//    } catch(err) {
-//        resp.status(401).send({
-//            erro: err.message
-//        })
-//    }    
-//})
+
+server.get('/consultarMarcadas', async (req, resp) => {
+  try{
+        const resposta = await ConsultarMarcadas();
+        resp.send(resposta)
+    } catch(err) {
+        resp.status(401).send({
+            erro: err.message
+        })
+    }    
+})
 
 
 

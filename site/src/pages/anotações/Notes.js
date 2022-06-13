@@ -1,10 +1,50 @@
 import "./Notes.scss";
 import { Link } from "react-router-dom";
 
-
+import { ToastContainer, toast } from 'react-toastify';   
+import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from "react-router-dom";  
+import { useEffect, useState } from "react";
+import { buscarPorConsulta, incluirAnotacoes } from '../../api/consultaApi'
+ 
 export default function Notes() {
+
+  const [arquivada, setArquivada] = useState({});
+  const [anotacoes, setAnotacoes] = useState('');
+ 
+ 
+  const { consultaParam } = useParams();
+ 
+  useEffect(() => {
+    CarregarArquivada(); 
+  }, []);
+ 
+    async function CarregarArquivada () {
+        const resposta = await buscarPorConsulta(consultaParam);
+        
+        setAnotacoes(resposta.anotacoes);
+        setArquivada(resposta);
+    }
+
+
+    async function concluirClick() {
+      try {
+          const r = await incluirAnotacoes(consultaParam, anotacoes)
+          setAnotacoes(r.anotacoes);
+        
+          toast('Anotação concluída.');
+      } catch (err) {
+          toast(err.response.data.erro);
+      }
+}
+
+
+
   return (
+
+  
     <main className="page-notes">
+       <ToastContainer />
       <header className="menu">
         <Link to = "/">
         <img className="logos"src="/images/logo-hori.jpg"
@@ -16,23 +56,23 @@ export default function Notes() {
       <div className="info">
         <div className="branquin">
           <div className="text">
-            <p>CAMILA NOVAES DOS SANTOS</p>
-            <p>Data de nascimento: 20/03/2001</p>
+            <p>{arquivada.nome}</p>
+            <p>Data de nascimento:{arquivada.nascimento.substr(0,10)}</p>
           </div>
           <div className="text">
-            <p>CPF:544.798.758-52</p>
-            <p>Data: 27/03/2022</p>
+            <p>CPF:{arquivada.cpf}</p>
+            <p>Data: {arquivada.data.substr(0,10)}</p>
           </div>
         </div>
 
         <div className="anotacoes">
           <h1 style={{color: "#2F5457; margin: 0px;"}}>Anotações</h1>
 
-          <textarea name="" id="" cols="30" rows="13"></textarea>
+          <textarea name="" id="" cols="30" rows="13" value={anotacoes} onChange={e => setAnotacoes(e.target.value)}></textarea>
         </div>
 
         <div className="button">
-          <button className="a" to= "/arquivadas" >
+          <button className="a" onClick={concluirClick}>
             Concluir
           </button>
         </div>
@@ -41,7 +81,7 @@ export default function Notes() {
       <footer className="rodape">
         <img
             className="logos"
-           src="images/logo-hori.jpg"
+           src="/images/logo-hori.jpg"
           alt="logo"
         />
         <p style={{width: "42em; text-align: center;"}}>

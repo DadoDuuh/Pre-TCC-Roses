@@ -7,7 +7,10 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
-import { FiltrarPorCPF, ConsultarTodos, removerConsulta} from '../../api/consultaApi'
+import { FiltrarPorCPF, ConsultarMarcadas, removerConsulta} from '../../api/consultaApi'
+
+
+
 
 
 export default function Scheduled() {
@@ -15,6 +18,7 @@ export default function Scheduled() {
 
     const [filtro, setFiltro] = useState('');
     const [consultas, setConsultas] = useState([]);
+    
    
 
     function editarConsulta(consulta) {
@@ -51,7 +55,7 @@ export default function Scheduled() {
       setConsultas(resp);
     }
     async function carregarTodasConsultas() {
-      const resp = await ConsultarTodos();
+      const resp = await ConsultarMarcadas();
       
       setConsultas(resp);
     }

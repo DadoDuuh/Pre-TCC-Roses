@@ -28,24 +28,24 @@ export async function ConsultarTodos() {
     return linhas;
 }
 
-//export async function ConsultarMarcadas() {
-//    const comando = `
-//    SELECT id_consulta		consulta,
-//       id_psicologo		    id,
-//       nm_paciente 		    nome,
-//       ds_cpf 			    cpf,
-//       dt_nascimento	    nascimento,
-//	   vl_preco		        preco,
-//       dt_consulta	        data,
-//       hr_consulta		    horario,
-//       ds_contato 		    contato,
-//       ds_anotacoes 	    anotacoes
-//       FROM tb_consulta
-//       WHERE dt_consulta > CURDATE();`
-//
-//    const [linhas] = await con.query(comando)
-//    return linhas;
-//}
+export async function ConsultarMarcadas() {
+    const comando = `
+    SELECT id_consulta		consulta,
+       id_psicologo		    id,
+       nm_paciente 		    nome,
+       ds_cpf 			    cpf,
+       dt_nascimento	    nascimento,
+	   vl_preco		        preco,
+       dt_consulta	        data,
+       hr_consulta		    horario,
+       ds_contato 		    contato,
+       ds_anotacoes 	    anotacoes
+       FROM tb_consulta
+       WHERE dt_consulta > CURDATE();`
+
+    const [linhas] = await con.query(comando)
+    return linhas;
+}
 
 
 export async function DeletarConsulta(consulta) {
