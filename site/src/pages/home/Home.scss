@@ -320,7 +320,77 @@
             margin-bottom: 0.8em ;
             margin-bottom: 15px;
         }
-        
+        .content-container4{
+            flex-direction: column;
+            
+            width: 15em;
+            height: 45em;
+        }
+        .ct4-psicologo{
+            width: 8em;
+            border-radius: 3em;
+        }
+        .container4-text > h2{
+            font-size: 1.5em;
+            margin-bottom:1em ;
+        }
+        .container4-text > p{
+            text-align: center;
+            font-size: 17px;
+            width: 25em;
+            
+            margin-left: 0px;
+            margin-bottom: 2em;
+            line-height: 1.5em;
+        }
+        .content-container5 > h2{
+            font-size: 28px;
+            margin-bottom: 1.5em;
+            width: 5.9em;
+        }
+        .container5-texts{
+            padding: 0px 20px;
+            margin-left: 1.9em;
+            height: 22em;
+        }
+        .container5-text1{
+            margin: 1em 1em;
+        }
+        .container5-text1 > p{
+            font-size: 17px;
+            width: 10em;
+            margin-left: 1.5em;
+            margin-right: 3em;
+        }
+        .container5-text1 > div{
+            background-color: rgb(160, 154, 154);
+            width: 5px;
+            height: 10em;
+            border-radius: 20px;
+        }
+        .footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 2em;
+            width: 40em;
+            background-color: #ffff;
+        }
+    
+        .footer p {
+            color:#2E939C;
+            font-weight: 600;
+            letter-spacing: 1.01px;
+        }
+    
+        .footer-container2, .footer-container3{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0em 3em 0em 0.5em;
+        }
     }
     
 }
