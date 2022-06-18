@@ -120,7 +120,7 @@ export default function Scheduled() {
               <img className="lupa" src = '/images/icone-loupe-gris.png' type="submit" id="send"  onClick={filtrar}/>
             </div>
           </div>
-          <div className="arquivadas">
+          <div className="marcadas">
             <h2>Consultas Marcadas</h2>
 
             {consultas.map(item => 

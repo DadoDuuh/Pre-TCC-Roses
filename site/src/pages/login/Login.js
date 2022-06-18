@@ -18,7 +18,6 @@ export default function Login() {
   const navigate = useNavigate();
   const ref = useRef();
 
-
   useEffect(() => {
     if(Storage('usuario-logado')) {
       navigate('/marcadas');
@@ -29,6 +28,7 @@ export default function Login() {
     
     ref.current.staticStart();
     setCarregando(true);
+    
     try {
       const r = await login (email, senha);
       Storage('usuario-logado', r);
