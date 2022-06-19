@@ -94,14 +94,14 @@ function Home() {
               Trabalho com a abordagem sistêmica, que me permite olhar para o
               indivíduo como fruto de suas relações onde está inserido, buscando
               compreender os sistemas, sejam eles familiares, entre amigos,
-              relacionamentos amorosos ou empregatícios. <br />
-              Estou aqui para juntos construirmos um vínculo onde será permitido
+              relacionamentos amorosos ou empregatícios.
+              <p>Estou aqui para juntos construirmos um vínculo onde será permitido
               que o sujeito compreenda e administre melhor os seus conflitos,
-              sentimentos, emoções e comportamentos. <br />
-              Esse caminho faz parte do meu trabalho enquanto profissional da
+              sentimentos, emoções e comportamentos.</p>
+              <p>Esse caminho faz parte do meu trabalho enquanto profissional da
               psicologia, me proporcionando realização em poder acolher o
               sofrimento do outro e ir em busca de novas possibilidades e
-              significados na sua vida.
+              significados na sua vida.</p>
             </p>
           </div>
         </div>
@@ -121,8 +121,8 @@ function Home() {
 
               <p>
                 “Profissional competente, objetivo, dedicado, demonstrando
-                sempre que gosta muito de sua profissão.” <br />
-                <br /> (Priscila Vianna)
+                sempre que gosta muito de sua profissão.”
+                <p>(Priscila Vianna)</p>
               </p>
 
               <div></div>
@@ -130,8 +130,8 @@ function Home() {
               <p>
                 “Excelente Profissional, excelente pessoa, excelente espaço de
                 atendimento, excelente localização, eu recomendo, com muita
-                segurança.” <br />
-                <br /> (Vitória Gonçalvez)
+                segurança.” 
+                <p>(Vitória Gonçalvez)</p>
               </p>
             </div>
 
@@ -140,16 +140,16 @@ function Home() {
 
               <p>
                 “Experiência muito agradável, profissional dedicado e muito
-                focado no trabalho, eu recomendo.” <br />
-                <br /> (Juliano Pistori)
+                focado no trabalho, eu recomendo.”
+                <p>(Juliano Pistori)</p>
               </p>
 
               <div></div>
 
               <p>
                 “Experiência única, super recomendo, profissional excelente
-                super atencioso e o ambiente é aconchegante” <br />
-                <br /> (Monique Pimenta)
+                super atencioso e o ambiente é aconchegante”
+                <p>(Monique Pimenta)</p>
               </p>
             </div>
           </div>
@@ -165,28 +165,18 @@ function Home() {
             </div>
 
             <div className="footer-container3">
-              <p>
-                (11) 99999-9999 <br />
-                <br />
-                (11) 5555-5555
-                <br />
-                <br />
-                @roses.dra_dri <br />
-                <br />
-                adripsicologa@marcarconsulta.com
-              </p>
+              <p>(11) 99999-9999</p>
+              <p>(11) 5555-5555</p>
+              <p>@roses.dra_dri</p>
+              <p>adripsicologa@marcarconsulta.com</p>
             </div>
 
             <div className="footer-container3">
-              <p>
-                Av. Leôncio de Magalhães, 1004, conj. 95, 9o andar - Jardim São
-                Paulo - São Paulo -SP - 02042-001 <br />
-                <br />
-                (ao lado do metrô Jd. São Paulo) <br />
-                <br />
-                Zona Norte | proximidades: Tucuruvi, Parada Inglesa, Santana,
-                Imirim, Casa Verde, Mandaqui.
-              </p>
+              <p>Av. Leôncio de Magalhães, 1004, conj. 95, 9o andar - Jardim São
+              Paulo - São Paulo -SP - 02042-001 - (ao lado do metrô Jd. São Paulo)</p>
+              
+              <p>Zona Norte | proximidades: Tucuruvi, Parada Inglesa, Santana,
+              Imirim, Casa Verde, Mandaqui.</p>
             </div>
           </div>
         </footer>

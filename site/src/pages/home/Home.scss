@@ -2,7 +2,7 @@
 .page-home{
     
     
-    border: none;
+    border: 1px solid green;
     margin: 0px;
     width: auto;
     height: auto;
@@ -67,7 +67,7 @@
         justify-content: space-between;
         align-items: center;
     
-        padding: 40px 20px 0px 20px;
+        padding: 40px 0px 0px 0px;
     
         background-color: #F9F2E7;
         text-align: center;
@@ -77,7 +77,7 @@
         background-repeat: no-repeat;
         margin-top: -5.5vh;
         margin-bottom:2em;
-        width: 203vh;
+        width: 100%;
         height:80vh;
     
         display: flex;
@@ -236,7 +236,7 @@
     .footer{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         padding: 2em;
         width: 84em;
@@ -249,12 +249,18 @@
         letter-spacing: 1.01px;
     }
 
+    .footer-container3 > p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
     .footer-container2, .footer-container3{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0em 6em 0em 1em;
+        width: 23em;
+        height: 10;
     }
 
     @media (max-width: 480px){
