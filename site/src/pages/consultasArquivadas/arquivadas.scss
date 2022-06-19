@@ -75,13 +75,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: auto;
+       
     }
     .lupa {
-        width: 2.7em;
-        height: 2.7em;
+        
         position: absolute;
-        right:20em;
-        margin-top: 0.4em;        
+       
+        width: 1.2em;
+        height: 1.2em;
+        right: 27.2em;
+        margin-top: 0.8em;
+        margin-right: 0.02em;    
     }
 
     .pesquisa {

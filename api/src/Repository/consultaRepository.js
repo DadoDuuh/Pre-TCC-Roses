@@ -5,7 +5,7 @@ export async function marcarConsulta(agendamento) {
     INSERT INTO tb_consulta (id_psicologo ,nm_paciente, ds_cpf, dt_nascimento, vl_preco, dt_consulta, hr_consulta, ds_contato)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 
-    const [resp] = await con.query(comando, [agendamento.id, agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.hora, agendamento.contato])
+    const [resp] = await con.query(comando, [agendamento.id, agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.horario, agendamento.contato])
     agendamento.consulta = resp.insertId
     return agendamento;
 }
@@ -69,7 +69,7 @@ export async function alterarConsulta(consulta, agendamento) {
     hr_consulta		        = ?,
     ds_contato 		        = ?
     WHERE id_consulta = ?`
-    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.hora, agendamento.contato, consulta])
+    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.horario, agendamento.contato, consulta])
     return resposta.affectedRows
 }
 export async function incluirAnotações(consulta, agendamento) {

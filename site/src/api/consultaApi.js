@@ -13,7 +13,7 @@ export async function NovaConsulta(nome, nascimento, cpf, horario, data, preco, 
         nascimento: nascimento,
         preco: preco,
         data: data,
-        hora: horario,  
+        horario: horario,  
         contato: contato,
         id: id
         })

@@ -131,7 +131,7 @@ export default function Scheduled() {
               </div>
               <div>
                 <p>Data: {item.data.substr(0,10)}</p>
-                <p>Horário : {item.horario}</p>
+                <p>Horário : {item.horario.substr(0,5)}</p>
               </div>
               <div className="icons">
                 

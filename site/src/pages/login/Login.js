@@ -45,7 +45,16 @@ export default function Login() {
         setErro(err.response.data.erro);
       }
     }
+
   }
+
+  document.addEventListener("keypress", function  (e) {
+    if(e.key === "Enter"){
+        const btn = document.querySelector("#send");
+        btn.click();
+    }
+  })
+  
 
 
   return (
@@ -85,7 +94,7 @@ export default function Login() {
             onChange={e => setSenha(e.target.value)}
             type="password" placeholder="Senha" name="senha" required />
 
-          <button onClick={entrarClick} disabled={carregando} className="button-submit">
+          <button onClick={entrarClick} disabled={carregando} type="submit" id="send" className="button-submit">
             Entrar
           </button>
 

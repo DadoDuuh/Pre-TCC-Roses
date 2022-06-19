@@ -25,7 +25,7 @@ server.post('/usuario/marcar', async (req, resp) => {
         if (!novaconsulta.data) {
             throw new Error("Data da consulta obrigatória.")
         }
-        if (!novaconsulta.hora) {
+        if (!novaconsulta.horario) {
             throw new Error("Horário da consulta obrigatório.")
         }
         if (!novaconsulta.contato) {
@@ -105,7 +105,7 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         if (!agendamento.data) {
             throw new Error("Data da consulta obrigatória.")
         }
-        if (!agendamento.hora) {
+        if (!agendamento.horario) {
             throw new Error("Horário da consulta obrigatório.")
         }
         if (!agendamento.contato) {

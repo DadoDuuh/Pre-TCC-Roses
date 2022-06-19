@@ -86,10 +86,11 @@ function Home() {
         </div>
 
         <div className="content-container4">
+          <img className="visible-xs" src="/images/psicologa.png" />
           <img className="ct4-psicologo" src="/images/zyro-image.png" alt=""/>
 
           <div className="container4-text">
-            <h2>Sobre mim</h2>
+            <h1>Sobre mim</h1>
             <p>
               Trabalho com a abordagem sistêmica, que me permite olhar para o
               indivíduo como fruto de suas relações onde está inserido, buscando
@@ -122,7 +123,7 @@ function Home() {
               <p>
                 “Profissional competente, objetivo, dedicado, demonstrando
                 sempre que gosta muito de sua profissão.”
-                <p>(Priscila Vianna)</p>
+                <p className="depoimento" >(Priscila Vianna)</p>
               </p>
 
               <div></div>
@@ -131,7 +132,7 @@ function Home() {
                 “Excelente Profissional, excelente pessoa, excelente espaço de
                 atendimento, excelente localização, eu recomendo, com muita
                 segurança.” 
-                <p>(Vitória Gonçalvez)</p>
+                <p className="depoimento" >(Vitória Gonçalvez)</p>
               </p>
             </div>
 
@@ -141,7 +142,7 @@ function Home() {
               <p>
                 “Experiência muito agradável, profissional dedicado e muito
                 focado no trabalho, eu recomendo.”
-                <p>(Juliano Pistori)</p>
+                <p className="depoimento" >(Juliano Pistori)</p>
               </p>
 
               <div></div>
@@ -149,7 +150,7 @@ function Home() {
               <p>
                 “Experiência única, super recomendo, profissional excelente
                 super atencioso e o ambiente é aconchegante”
-                <p>(Monique Pimenta)</p>
+                <p className="depoimento">(Monique Pimenta)</p>
               </p>
             </div>
           </div>

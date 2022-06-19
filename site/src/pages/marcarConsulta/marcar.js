@@ -6,6 +6,7 @@ import Storage from 'local-storage'
 import { useEffect, useState } from "react";
 import { NovaConsulta, alterarConsulta, buscarPorConsulta } from "../../api/consultaApi";
 import { useParams } from 'react-router-dom'
+import InputMask from 'react-input-mask'
 
 function Mark() {
 
@@ -99,7 +100,7 @@ function Mark() {
             </div>
             <div className="paciente">
               <label for="">CPF do paciente</label>
-              <input type="text" value={cpf} onChange={e => setCpf(e.target.value)}
+              <InputMask mask="999.999.999-99" type="text" value={cpf} onChange={e => setCpf(e.target.value)}
               />
             </div>
           </div>
