@@ -1,5 +1,5 @@
 import "./Notes.scss";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';   
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,13 +36,8 @@ export default function Notes() {
       } catch (err) {
           toast(err.response.data.erro);
       }
-}
-
-
-
+    }
   return (
-
-  
     <main className="page-notes">
        <ToastContainer />
       <header className="menu">

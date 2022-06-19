@@ -97,7 +97,7 @@
 
     }
 
-    .pesquisa-elements input {
+    .pesquisa-elements > input {
         height: 2em;
         padding: 2em;
         width: 100%;
@@ -175,5 +175,63 @@
         font-weight: 600;
         width: 37em;
         color: #2E939C;
+    }
+
+    @media (max-width: 480px){
+        
+        .logos{
+            width: 8em;
+        }
+        .buttons {
+            padding: 11px 20px;
+            font-size: 10px;
+        }
+        button > img {
+            width: 1em;
+        }
+        .lupa {
+            width: 1.6em;
+            height: 1.6em;
+            right: 27.2em;
+            margin-top: 0.4em;        
+        }
+        .pesquisa {
+            width: 28em;
+            padding: 2em 0em 2em 0em;
+        }
+        .pesquisa-elements > input {
+            height: 1.5em;
+            padding: 1.7em;
+            width: 100%;
+            border-radius: 0.9em;
+        }
+        .arquivadas {
+            width: 28em;
+            border-radius: 20px;
+            margin-bottom: 2em;
+        }
+        .icons img {
+            width: 1.8em;
+        }
+        a > img {
+            width: 10px;
+        }
+        h2 {
+            font-size: qem;
+        }
+        .azulzin {
+            padding: 0px 40px;
+            border-radius: 20px;
+            width: 35em;
+            height: 6em;
+            margin-bottom: 40px;
+
+            font-size: 12px;
+        }
+        .rodape > p{
+            text-align: center;
+            font-size: 0.6em;
+            width: 42em;
+        }
     }
 }
