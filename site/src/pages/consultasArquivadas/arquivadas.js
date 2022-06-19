@@ -83,7 +83,7 @@ export default function Archived() {
             <h2>Consultas Arquivadas</h2>
 
               {consultas.map(item => 
-                <Link className="azulzin" to={`/anotacoes/${item.id}`}>
+                <Link className="azulzin" to={`/anotacoes/${item.consulta}`}>
                 <div>
                   <p>{item.nome}</p>
                   <p>{item.cpf}</p>

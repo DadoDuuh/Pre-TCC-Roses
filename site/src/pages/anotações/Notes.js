@@ -57,11 +57,11 @@ export default function Notes() {
         <div className="branquin">
           <div className="text">
             <p>{arquivada.nome}</p>
-            <p>Data de nascimento:{arquivada.nascimento.substr(0,10)}</p>
+            <p>Data de nascimento:{String(arquivada.data).substr(0,10)}</p>
           </div>
           <div className="text">
             <p>CPF:{arquivada.cpf}</p>
-            <p>Data: {arquivada.data.substr(0,10)}</p>
+            <p>Data: {String(arquivada.data).substr(0,10)}</p>
           </div>
         </div>
 
