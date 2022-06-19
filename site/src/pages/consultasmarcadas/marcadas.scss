@@ -206,11 +206,10 @@
             width: 1em;
         }
         .lupa {
-            width: 2em;
-            height: 2em;
-            right: 26.8em;
+            width: 1.6em;
+            height: 1.6em;
+            right: 27.2em;
             margin-top: 0.4em;        
-
         }
         .pesquisa {
             width: 28em;
@@ -218,7 +217,7 @@
         }
         .pesquisa-elements input {
             height: 1.5em;
-            padding: 1.6em;
+            padding: 1.7em;
             width: 100%;
             border-radius: 0.9em;
         }
@@ -228,7 +227,7 @@
             margin-bottom: 2em;
         }
         .icons img {
-            width: 1.5em;
+            width: 1.8em;
         }
         Link > img {
             width: 10px;
@@ -236,7 +235,6 @@
         h2 {
             font-size: qem;
         }
-    
         .azulzin {
             padding: 0px 40px;
             border-radius: 20px;
@@ -245,6 +243,11 @@
             margin-bottom: 40px;
 
             font-size: 12px;
+        }
+        .rodape > p{
+            text-align: center;
+            font-size: 0.6em;
+            width: 42em;
         }
     }
 }
