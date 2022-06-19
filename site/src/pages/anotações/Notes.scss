@@ -109,11 +109,40 @@
         width: 20em;
     }
 
-    *{
-        border: green solid 2px;   
-    }
-
     @media (max-width: 480px) {
-
+        .branquin{
+            align-items: center;
+            font-size: 12px;
+            line-height: 6px;
+            border-radius: 18px;
+            margin: 3em 0em 3em 0em;
+            width: 90%;
+            height: 6em;
+            padding: 0px 20px;
+        }
+        .anotacoes{
+            width: 90%;
+        }
+        .anotacoes > h1 {
+            font-size: 1.8em;
+        }
+        textarea{
+            border: 0.8em solid #C5DBDE;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+        .rodape > p{
+            text-align: center;
+            font-size: 0.7em;
+            width: 42em;
+        }
+        .a {
+            font-size: 12px;
+            padding: 10px 30px;
+            border-radius: 2em;
+        }
+        .logos{
+            width: 8em;
+        }
     }
 }
