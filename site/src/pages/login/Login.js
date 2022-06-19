@@ -26,7 +26,7 @@ export default function Login() {
 
   async function entrarClick() {
     
-    ref.current.staticStart();
+    ref.current.continuousStart();
     setCarregando(true);
     
     try {
@@ -35,7 +35,7 @@ export default function Login() {
 
       setTimeout(() => {
         navigate('/marcadas');
-      }, 2000)
+      }, 3000)
 
     }
     catch (err) {
