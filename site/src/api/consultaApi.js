@@ -29,7 +29,7 @@ export async function alterarConsulta(consulta, nome, nascimento, cpf, horario, 
         nascimento: nascimento,
         preco: preco,
         data: data,
-        hora: horario,  
+        horario: horario,  
         contato: contato,
         id: id
         })

@@ -49,15 +49,16 @@ function Mark() {
         const r = await NovaConsulta(nome, nascimento, cpf, horario, data, preco, contato, usuario);
 
         setConsulta(r.consulta);
+        toast('Nova consulta marcada com sucesso.');
       }
       else {
         await alterarConsulta(consulta, nome, nascimento, cpf, horario, data, preco, contato, usuario);
-
+        toast('Consulta alterada com sucesso.');
       }
 
 
 
-      toast('Nova consulta marcada com sucesso.');
+      
     } catch (err) {
       toast(err.response.data.erro);
     }
