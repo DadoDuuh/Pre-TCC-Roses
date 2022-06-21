@@ -126,18 +126,18 @@ function Home() {
                 <p className="depoimento" >(Priscila Vianna)</p>
               </p>
 
+              
               <div></div>
-
               <p>
                 “Excelente Profissional, excelente pessoa, excelente espaço de
-                atendimento, excelente localização, eu recomendo, com muita
+                atendimento, eu recomendo, com muita
                 segurança.” 
                 <p className="depoimento" >(Vitória Gonçalvez)</p>
               </p>
             </div>
 
             <div className="container5-text1">
-              <div></div>
+            <div></div>  
 
               <p>
                 “Experiência muito agradável, profissional dedicado e muito

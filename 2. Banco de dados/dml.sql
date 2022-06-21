@@ -42,18 +42,18 @@ SELECT id_consulta		idconsulta,
        ds_anotacoes 	anotacoes
   FROM tb_consulta;
 
-  -- SELECT id_consulta		idconsulta,
-  --     id_psicologo		idpsicologo,
-  --     nm_paciente 		nome,
-  --     ds_cpf 			cpf,
-  --    dt_nascimento	nascimento,
-  --	   vl_preco		    preco,
-  --     dt_consulta	    dataconsulta,
-  --     hr_consulta		horario,
-  --     ds_contato 		contato,
-  --     ds_anotacoes 	anotacoes
-  --FROM tb_consulta
-  --WHERE dt_consulta > CURDATE();
+   SELECT id_consulta		idconsulta,
+       id_psicologo		idpsicologo,
+       nm_paciente 		nome,
+      ds_cpf 			cpf,
+      dt_nascimento	nascimento,
+  	   vl_preco		    preco,
+       dt_consulta	    dataconsulta,
+       hr_consulta		horario,
+       ds_contato 		contato,
+       ds_anotacoes 	anotacoes
+  FROM tb_consulta
+  WHERE dt_consulta > CURDATE();
   
 
 -- CSU03:: marcar consulta

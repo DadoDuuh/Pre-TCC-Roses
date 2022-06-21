@@ -1,7 +1,7 @@
 .page-mark{
   
     
-    
+    overflow-x: hidden;
     @keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
@@ -116,9 +116,7 @@
     }
 
     @media (max-width: 480px){
-        .info{
-            height: 50em;
-        }
+        
         h1{
             margin-bottom: 1em;
         }

@@ -2,6 +2,7 @@
 
     background-color: #fff;
     animation: fadein 0.5s;
+    overflow-x: hidden;
 
     @keyframes fadein {
         from {
@@ -80,7 +81,7 @@
         width: 2.7em;
         height: 2.7em;
         position: absolute;
-        right:20em;
+        right:11em;
         margin-top: 0.4em;        
         cursor: pointer;
     }
@@ -177,6 +178,7 @@
         img {
             visibility: hidden;
         }
+        
     }
 
     .azulzin:hover {
@@ -186,7 +188,7 @@
             visibility: visible;
             animation: fadein 0.7s;
         }
-
+        
     }
 
     .rodape {
@@ -211,7 +213,7 @@
             width: 8em;
         }
         .buttons {
-            padding: 11px 20px;
+            padding: 11px 15px;
             font-size: 10px;
         }
         button > img {
@@ -220,13 +222,13 @@
         .lupa {
             width: 1.2em;
             height: 1.2em;
-            right: 27.2em;
+            right: 1em;
             margin-top: 0.8em;
             margin-right: 0.02em;
                   
         }
         .pesquisa {
-            width: 28em;
+            width: 25em;
             padding: 2em 0em 2em 0em;
         }
         .pesquisa-elements input {
@@ -236,7 +238,7 @@
             border-radius: 0.9em;
         }
         .marcadas {
-            width: 28em;
+            width: 25em;
             border-radius: 20px;
             margin-bottom: 2em;
         }
@@ -252,7 +254,7 @@
         .azulzin {
             padding: 0px 40px;
             border-radius: 20px;
-            width: 35em;
+            width: 30em;
             height: 6em;
             margin-bottom: 40px;
 

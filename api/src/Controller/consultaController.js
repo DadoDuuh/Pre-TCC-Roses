@@ -10,24 +10,34 @@ server.post('/usuario/marcar', async (req, resp) => {
         if (!novaconsulta.id) {
             throw new Error("Usuário não logado.")
         }
-        if (!novaconsulta.nome.Trim()) {
+        if (!novaconsulta.nome.trim()) {
             throw new Error("Nome do paciente obrigatório.")
         }
-        if (!novaconsulta.cpf.Trim()) {
-            throw new Error("CPF obrigatório.")
-        }
+        
         if (!novaconsulta.nascimento) {
             throw new Error("Data de nascimento obrigatória.")
         }
-        if (!novaconsulta.preco.Trim()) {
-            throw new Error("Valor da consulta é obrigatório.")
+        
+        if (!novaconsulta.cpf.trim()) {
+            throw new Error("CPF obrigatório.")
+        }
+        
+        if (!novaconsulta.horario) {
+            throw new Error("Horário da consulta obrigatório.")
         }
         if (!novaconsulta.data) {
             throw new Error("Data da consulta obrigatória.")
         }
-        if (!novaconsulta.horario) {
-            throw new Error("Horário da consulta obrigatório.")
+        
+        if (!novaconsulta.preco)  {
+            throw new Error("Valor da consulta é obrigatório.")
         }
+
+        if (novaconsulta.preco <= 0)  {
+            throw new Error("Valor da consulta não pode ser negativo.")
+        }
+
+        
         if (!novaconsulta.contato) {
             throw new Error("Meio de contato obrigatório.")
         }
@@ -91,16 +101,16 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         const agendamento = req.body;
         const { consulta } = req.params
 
-        if (!agendamento.nome.Trim()) {
+        if (!agendamento.nome.trim()) {
             throw new Error("Nome do paciente obrigatório.")
         }
-        if (!agendamento.cpf.Trim()) {
+        if (!agendamento.cpf.trim()) {
             throw new Error("CPF obrigatório.")
         }
         if (!agendamento.nascimento) {
             throw new Error("Data de nascimento obrigatória.")
         }
-        if (!agendamento.preco.Trim()) {
+        if (!agendamento.preco.trim()) {
             throw new Error("Valor da consulta é obrigatório.")
         }
         if (!agendamento.data) {
