@@ -69,7 +69,11 @@ export async function alterarConsulta(consulta, agendamento) {
     hr_consulta		        = ?,
     ds_contato 		        = ?
     WHERE id_consulta = ?`
-    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, Number(agendamento.data), agendamento.horario, agendamento.contato, consulta])
+
+    console.log(agendamento);
+
+    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.horario, agendamento.contato, consulta])
+
     return resposta.affectedRows
 }
 export async function incluirAnotações(consulta, agendamento) {

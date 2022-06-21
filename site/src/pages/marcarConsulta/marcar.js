@@ -60,6 +60,7 @@ function Mark() {
 
       
     } catch (err) {
+      console.log(err);
       toast(err.response.data.erro);
     }
   }

@@ -116,8 +116,18 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         if (!agendamento.data) {
             throw new Error("Data da consulta obrigatória.")
         }
-        if (Date.parse(agendamento.data) < Date.parse(date)) {
-            throw new Error("Data Inválida.")
+
+       // console.log(agendamento.data + 'T' + agendamento.horario)
+
+        let hoje = new Date();
+        hoje.setHours(hoje.getHours() - hoje.getTimezoneOffset()/60);
+
+        let horaConsulta = new Date(agendamento.data + 'T' + agendamento.horario);
+        horaConsulta.setHours(horaConsulta.getHours() - horaConsulta.getTimezoneOffset()/60);
+
+        
+        if (horaConsulta < hoje) {
+            throw new Error("Data menor que o dia atual.")
         }
         if (!agendamento.horario) {
             throw new Error("Horário da consulta obrigatório.")
@@ -134,7 +144,7 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         }
         
     } catch (err) {
-        resp.send({
+        resp.status(400).send({
             erro: err.message
         });
 
