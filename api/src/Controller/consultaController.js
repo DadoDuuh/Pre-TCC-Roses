@@ -17,9 +17,24 @@ server.post('/usuario/marcar', async (req, resp) => {
         if (!novaconsulta.nascimento) {
             throw new Error("Data de nascimento obrigatória.")
         }
+
+        if (new Date(novaconsulta.nascimento) >= new Date()) {
+            throw new Error ("Data de nascimento inválida")
+        }
         
         if (!novaconsulta.cpf.trim()) {
             throw new Error("CPF obrigatório.")
+        }
+
+        let hoje = new Date();
+        hoje.setHours(hoje.getHours() - hoje.getTimezoneOffset()/60);
+
+        let horaConsulta = new Date(novaconsulta.data + 'T' + novaconsulta.horario);
+        horaConsulta.setHours(horaConsulta.getHours() - horaConsulta.getTimezoneOffset()/60);
+
+        
+        if (horaConsulta < hoje) {
+            throw new Error("Data menor que o dia atual.")
         }
         
         if (!novaconsulta.horario) {
@@ -106,6 +121,9 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         }
         if (!agendamento.cpf.trim()) {
             throw new Error("CPF obrigatório.")
+        }
+        if (new Date(agendamento.nascimento) >= new Date()) {
+            throw new Error ("Data de nascimento inválida")
         }
         if (!agendamento.nascimento) {
             throw new Error("Data de nascimento obrigatória.")

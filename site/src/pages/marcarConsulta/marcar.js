@@ -126,7 +126,7 @@ function Mark() {
             </div>
             <div className="paciente">
               <label for="">Contato</label>
-              <InputMask mask="(99) 99999-9999" type="text" value={contato} onChange={e => setContato(e.target.value)}
+              <input type="text" value={contato} onChange={e => setContato(e.target.value)}
               />
             </div>
           </div>
