@@ -69,7 +69,7 @@ export async function alterarConsulta(consulta, agendamento) {
     hr_consulta		        = ?,
     ds_contato 		        = ?
     WHERE id_consulta = ?`
-    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, agendamento.data, agendamento.horario, agendamento.contato, consulta])
+    const [resposta] = await con.query(comando, [agendamento.nome, agendamento.cpf, agendamento.nascimento, agendamento.preco, Number(agendamento.data), agendamento.horario, agendamento.contato, consulta])
     return resposta.affectedRows
 }
 export async function incluirAnotações(consulta, agendamento) {
@@ -153,6 +153,14 @@ export async function ConsultarArquivadas() {
     ds_anotacoes 	        anotacoes
     FROM tb_consulta
     WHERE dt_consulta < CURDATE();`
+
+    const [linhas] = await con.query(comando)
+    return linhas
+}
+
+export async function ConsultarData() {
+    const comando = `
+    SELECT CURDATE();`
 
     const [linhas] = await con.query(comando)
     return linhas

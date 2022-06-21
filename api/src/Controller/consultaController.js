@@ -1,4 +1,4 @@
-import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, ConsultarArquivadas, ConsultarMarcadas } from '../Repository/consultaRepository.js'
+import { alterarConsulta, ConsultarTodos, DeletarConsulta, marcarConsulta, incluirAnotações, FiltrarPorCPF, buscarPorConsulta, FiltrarArquivadasPorCPF, ConsultarArquivadas, ConsultarMarcadas, ConsultarData } from '../Repository/consultaRepository.js'
 
 import { Router } from 'express'
 const server = Router();
@@ -10,16 +10,16 @@ server.post('/usuario/marcar', async (req, resp) => {
         if (!novaconsulta.id) {
             throw new Error("Usuário não logado.")
         }
-        if (!novaconsulta.nome) {
+        if (!novaconsulta.nome.Trim()) {
             throw new Error("Nome do paciente obrigatório.")
         }
-        if (!novaconsulta.cpf) {
+        if (!novaconsulta.cpf.Trim()) {
             throw new Error("CPF obrigatório.")
         }
         if (!novaconsulta.nascimento) {
             throw new Error("Data de nascimento obrigatória.")
         }
-        if (!novaconsulta.preco) {
+        if (!novaconsulta.preco.Trim()) {
             throw new Error("Valor da consulta é obrigatório.")
         }
         if (!novaconsulta.data) {
@@ -87,23 +87,27 @@ server.delete('/deletarConsulta/:consulta', async (req, resp) => {
 //alterar consulta
 server.put('/alterarConsulta/:consulta', async (req, resp) => {
     try {
+        const date = await ConsultarData();
         const agendamento = req.body;
         const { consulta } = req.params
 
-        if (!agendamento.nome) {
+        if (!agendamento.nome.Trim()) {
             throw new Error("Nome do paciente obrigatório.")
         }
-        if (!agendamento.cpf) {
+        if (!agendamento.cpf.Trim()) {
             throw new Error("CPF obrigatório.")
         }
         if (!agendamento.nascimento) {
             throw new Error("Data de nascimento obrigatória.")
         }
-        if (!agendamento.preco) {
+        if (!agendamento.preco.Trim()) {
             throw new Error("Valor da consulta é obrigatório.")
         }
         if (!agendamento.data) {
             throw new Error("Data da consulta obrigatória.")
+        }
+        if (Date.parse(agendamento.data) < Date.parse(date)) {
+            throw new Error("Data Inválida.")
         }
         if (!agendamento.horario) {
             throw new Error("Horário da consulta obrigatório.")
@@ -118,6 +122,7 @@ server.put('/alterarConsulta/:consulta', async (req, resp) => {
         else {
             resp.sendStatus(204)
         }
+        
     } catch (err) {
         resp.send({
             erro: err.message

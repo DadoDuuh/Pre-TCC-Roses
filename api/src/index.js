@@ -5,6 +5,7 @@ import 'dotenv/config'
 import usuarioController from './Controller/usuarioController.js'
 import consultaController from './Controller/consultaController.js'
 
+export const date = new Date();
 const server = express();
 server.use(cors());
 server.use(express.json());
